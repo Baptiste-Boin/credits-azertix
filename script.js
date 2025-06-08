@@ -1,1 +1,0 @@
-// script contenu JavaScript complet à inclure ici
