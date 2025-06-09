@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZERTIX - Crédits Vidéo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-gradient-to-r from-blue-400 to-blue-600 p-4 shadow-lg rounded-b-xl flex justify-between items-center flex-wrap">
+        <div class="text-white text-3xl font-extrabold tracking-wide cursor-pointer" onclick="window.location.href='index.html'">
+            AZERTIX
+        </div>
+        <nav class="flex items-center space-x-6 mt-4 md:mt-0">
+            <button
+                onclick="window.location.href='index.html'"
+                class="text-white text-lg font-semibold hover:text-blue-100 transition duration-300 ease-in-out px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+            >
+                Accueil
+            </button>
+        </nav>
+    </header>
+
+    <main id="app-root"></main>
+
+    <script>
+        // Récupérer l'ID de la vidéo à partir de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('videoId');
+
+        // Données de remplacement pour les vidéos et les crédits (assurez-vous que ces données sont les mêmes que dans index.html)
+        const videosData = [
+            {
+                id: 'vid1',
+                title: 'Ma Super Vidéo #1 - L\'Aventure Commence',
+                thumbnail: 'https://placehold.co/320x180/E0E0E0/333333?text=AZERTIX+Video+1',
+                credits: [
+                    { name: 'Jean Dupont', role: 'Réalisateur' },
+                    { name: 'Marie Curie', role: 'Monteuse' },
+                    { name: 'Albert Einstein', role: 'Acteur Principal' },
+                    { name: 'Léa Martin', role: 'Assistante Caméra' },
+                    { name: 'Sophie Dubois', role: 'Compositeur' },
+                    { name: 'Pierre Moreau', role: 'Sound Designer' },
+                ],
+                youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+            },
+            {
+                id: 'vid2',
+                title: 'Une Autre Vidéo Cool - Le Mystère Dévoilé',
+                thumbnail: 'https://placehold.co/320x180/D0D0D0/222222?text=AZERTIX+Video+2',
+                credits: [
+                    { name: 'Luc Tremblay', role: 'Directeur de la photographie' },
+                    { name: 'Chloe Roy', role: 'Scénariste' },
+                    { name: 'Marc Gagnon', role: 'Designer Graphique' },
+                    { name: 'Sarah Lavoie', role: 'Coordinatrice de production' },
+                ],
+                youtubeUrl: 'https://www.youtube.com/watch?v=some_other_video_id'
+            },
+            {
+                id: 'vid3',
+                title: 'Troisième Vidéo - Secrets d\'un Ancien Monde',
+                thumbnail: 'https://placehold.co/320x180/C0C0C0/111111?text=AZERTIX+Video+3',
+                credits: [
+                    { name: 'Antoine Leclerc', role: 'Producteur Exécutif' },
+                    { name: 'Émilie Beaulieu', role: 'Directrice Artistique' },
+                    { name: 'Nicolas Fournier', role: 'Éclairagiste' },
+                    { name: 'Olivia Girard', role: 'Ingénieure du son' },
+                ],
+                youtubeUrl: 'https://www.youtube.com/watch?v=another_video_id'
+            },
+            {
+                id: 'vid4',
+                title: 'Quatrième Vidéo - Guide Complet',
+                thumbnail: 'https://placehold.co/320x180/B0B0B0/000000?text=AZERTIX+Video+4',
+                credits: [
+                    { name: 'Gabriel Rousseau', role: 'Voix Off' },
+                    { name: 'Charlotte Lefevre', role: 'Animateur 2D' },
+                    { name: 'Jules Lambert', role: 'Développeur Logiciel' },
+                    { name: 'Manon Petit', role: 'Testeur QA' },
+                ],
+                youtubeUrl: 'https://www.youtube.com/watch?v=yet_another_video_id'
+            }
+        ];
+
+        const appRoot = document.getElementById('app-root');
+
+        // Fonction pour rendre la page des crédits d'une vidéo spécifique
+        function renderVideoCreditPage(videoId) {
+            const video = videosData.find(v => v.id === videoId);
+
+            if (!video) {
+                appRoot.innerHTML = `
+                    <div class="flex items-center justify-center min-h-screen bg-gray-50 text-light-body">
+                        <p class="text-xl">Vidéo non trouvée. <a href="index.html" class="text-blue-600 hover:underline">Retour à l'accueil</a></p>
+                    </div>
+                `;
+                return;
+            }
+
+            appRoot.innerHTML = `
+                <div class="container mx-auto p-6">
+                    <a
+                        href="index.html"
+                        class="mb-6 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-200 flex items-center shadow-sm"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        Retour
+                    </a>
+
+                    <div class="card-bg rounded-xl shadow-2xl p-6 lg:p-8 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 mb-8 border border-gray-200">
+                        <img
+                            src="${video.thumbnail}"
+                            alt="${video.title}"
+                            class="w-full md:w-64 h-auto rounded-lg shadow-lg border border-gray-100"
+                            onerror="this.onerror=null;this.src='https://placehold.co/320x180/E0E0E0/333333?text=Image+non+disponible';"
+                        />
+                        <div class="flex-1 text-center md:text-left">
+                            <h2 class="text-4xl font-extrabold text-light-heading mb-2">${video.title}</h2>
+                            <a
+                                href="${video.youtubeUrl}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center text-red-600 hover:text-red-700 transition-colors duration-200 text-lg font-semibold"
+                            >
+                                Voir sur YouTube
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h3 class="text-3xl font-bold text-light-heading mb-6 text-center">Crédits de la vidéo</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${video.credits.map((credit, index) => `
+                            <li class="bg-gradient-to-br from-blue-50 to-indigo-100 p-5 rounded-lg shadow-md border border-blue-200 animate-fade-in">
+                                <p class="text-xl font-semibold text-gray-800 mb-1">${credit.name}</p>
+                                <p class="text-md text-gray-600">${credit.role}</p>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Charger la page des crédits avec l'ID de la vidéo
+        document.addEventListener('DOMContentLoaded', () => {
+            renderVideoCreditPage(videoId);
+        });
+    </script>
+</body>
+</html>
