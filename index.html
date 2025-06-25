@@ -176,24 +176,56 @@
         </div>
 
         <!-- PAGE CRÉDITS MANQUANTS -->
-        <div id="page-missing-credits" class="page">
+        <div id="page-missing-credits" class="page active">
             <div class="container mx-auto px-4 sm:px-6 py-12">
                 <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8">
                     <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">Signaler un Crédit Manquant</h1>
-                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-center">Aidez-nous à maintenir des informations de crédit précises.</p>
-                    <form id="missing-credit-form" class="space-y-6">
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-center">Aidez-nous à maintenir des informations de crédit précises en remplissant tous les champs.</p>
+                    
+                    <!-- 
+                        INSTRUCTIONS IMPORTANTES POUR L'ENVOI D'EMAIL :
+                        Pour que le formulaire envoie un e-mail sans révéler l'adresse (baptiste@boin.uk) côté client,
+                        l'attribut 'action' doit pointer vers un script côté serveur (PHP, Node.js, etc.) ou un service tiers.
+                        
+                        Exemple avec un service comme Formspree :
+                        1. Créez un compte sur formspree.io.
+                        2. Créez un nouveau formulaire et renseignez votre email de destination (baptiste@boin.uk).
+                        3. Formspree vous donnera une URL unique.
+                        4. Remplacez "YOUR_FORM_ENDPOINT" ci-dessous par cette URL.
+                    -->
+                    <form id="missing-credit-form" action="YOUR_FORM_ENDPOINT" method="POST" class="space-y-6">
+                        
                         <div>
                             <label for="form-video-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">URL de la vidéo *</label>
-                            <input type="url" id="form-video-url" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://youtube.com/watch?v=...">
+                            <input type="url" id="form-video-url" name="video_url" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://youtube.com/watch?v=...">
                         </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="form-first-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Prénom de la personne à créditer *</label>
+                                <input type="text" id="form-first-name" name="first_name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Jean">
+                            </div>
+                            <div>
+                                <label for="form-last-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom de la personne à créditer *</label>
+                                <input type="text" id="form-last-name" name="last_name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Dupont">
+                            </div>
+                        </div>
+
                         <div>
-                            <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email (Optionnel)</label>
-                            <input type="email" id="form-contact-email" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="pour que nous puissions vous répondre">
+                            <label for="form-project-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Son rôle dans le projet *</label>
+                            <textarea id="form-project-role" name="project_role" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" rows="4" placeholder="Décrivez sa contribution. Ex: Monteur vidéo, compositeur de la musique, graphiste..."></textarea>
                         </div>
+                        
                         <div>
-                            <label for="form-credit-details" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Détails du crédit *</label>
-                            <textarea id="form-credit-details" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" rows="4" placeholder="Donnez le plus de détails possible..."></textarea>
+                            <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email de contact *</label>
+                            <input type="email" id="form-contact-email" name="contact_email" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Pour que nous puissions vous répondre">
                         </div>
+
+                        <div>
+                            <label for="form-credit-details" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Détails supplémentaires (Optionnel)</label>
+                            <textarea id="form-credit-details" name="additional_details" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" rows="3" placeholder="Toute autre information utile..."></textarea>
+                        </div>
+
                         <button type="submit" id="submit-missing-credit-btn" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:bg-primary/90 transition-all">Soumettre le rapport</button>
                     </form>
                 </div>
@@ -205,7 +237,9 @@
         <div class="container mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 text-center sm:text-left">
                 <div>
-                    <a href="#" data-page="home" class="page-link flex items-center justify-center sm:justify-start mb-6"><span class="font-['Pacifico'] text-3xl text-white">Azertix</span></a>
+                    <a href="#" data-page="home" class="page-link flex items-center justify-center sm:justify-start mb-6">
+                        <span class="font-['Pacifico'] text-3xl text-white">Azertix</span>
+                    </a>
                     <p class="text-gray-400 mb-6">Plateforme dédiée à la reconnaissance des contributions créatives.</p>
                     <div class="flex space-x-4 justify-center sm:justify-start">
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-youtube-fill text-white"></i></a>
