@@ -3,167 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZERTIX - Crédits Vidéo</title>
+    <title>Azertix - Crédits YouTube</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Configuration Tailwind personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6d28d9',
+                        secondary: '#4f46e5'
+                    },
+                    borderRadius: {
+                        'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px',
+                        'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icônes Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    
+    <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="bg-gradient-to-r from-blue-400 to-blue-600 p-4 shadow-lg rounded-b-xl flex justify-between items-center flex-wrap">
-        <div class="text-white text-3xl font-extrabold tracking-wide cursor-pointer" onclick="window.location.href='index.html'">
-            AZERTIX
-        </div>
-        <nav class="flex items-center space-x-6 mt-4 md:mt-0">
-            <button
-                onclick="window.location.href='index.html'"
-                class="text-white text-lg font-semibold hover:text-blue-100 transition duration-300 ease-in-out px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
-            >
-                Accueil
-            </button>
+<body class="bg-gray-50 dark:bg-gray-900">
+
+    <header class="sticky top-0 z-50">
+        <nav class="glassmorphism py-4 px-4 sm:px-6 flex items-center justify-between shadow-md">
+            <a href="#" data-page="home" class="page-link flex items-center">
+                <span class="font-['Pacifico'] text-2xl text-primary">Azertix</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-gray-800/50 rounded-full px-2 py-1 shadow-sm border border-gray-100 dark:border-gray-700">
+                <a href="#" data-page="home" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Accueil</a>
+                <a href="#" data-page="all-credits" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Tous les Crédits</a>
+                <a href="#" data-page="missing-credits" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Crédits Manquants</a>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+                <button id="theme-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white dark:bg-gray-800/60 dark:hover:bg-gray-700 transition-colors">
+                    <i id="theme-icon" class="ri-moon-line text-gray-700 dark:text-gray-200"></i>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white dark:bg-gray-800/60 dark:hover:bg-gray-700 transition-colors">
+                    <i id="mobile-menu-icon" class="ri-menu-line text-gray-700 dark:text-gray-200"></i>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg">
+            <a href="#" data-page="home" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Accueil</a>
+            <a href="#" data-page="all-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Tous les Crédits</a>
+            <a href="#" data-page="missing-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Crédits Manquants</a>
+        </div>
     </header>
 
-    <main id="app-root"></main>
-
-    <script>
-        // Récupérer l'ID de la vidéo à partir de l'URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const videoId = urlParams.get('videoId');
-
-        // Données de remplacement pour les vidéos et les crédits (assurez-vous que ces données sont les mêmes que dans index.html)
-        const videosData = [
-            {
-                id: 'vid1',
-                title: 'Ma Super Vidéo #1 - L\'Aventure Commence',
-                thumbnail: 'https://placehold.co/320x180/E0E0E0/333333?text=AZERTIX+Video+1',
-                credits: [
-                    { name: 'Jean Dupont', role: 'Réalisateur' },
-                    { name: 'Marie Curie', role: 'Monteuse' },
-                    { name: 'Albert Einstein', role: 'Acteur Principal' },
-                    { name: 'Léa Martin', role: 'Assistante Caméra' },
-                    { name: 'Sophie Dubois', role: 'Compositeur' },
-                    { name: 'Pierre Moreau', role: 'Sound Designer' },
-                ],
-                youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            },
-            {
-                id: 'vid2',
-                title: 'Une Autre Vidéo Cool - Le Mystère Dévoilé',
-                thumbnail: 'https://placehold.co/320x180/D0D0D0/222222?text=AZERTIX+Video+2',
-                credits: [
-                    { name: 'Luc Tremblay', role: 'Directeur de la photographie' },
-                    { name: 'Chloe Roy', role: 'Scénariste' },
-                    { name: 'Marc Gagnon', role: 'Designer Graphique' },
-                    { name: 'Sarah Lavoie', role: 'Coordinatrice de production' },
-                ],
-                youtubeUrl: 'https://www.youtube.com/watch?v=some_other_video_id'
-            },
-            {
-                id: 'vid3',
-                title: 'Troisième Vidéo - Secrets d\'un Ancien Monde',
-                thumbnail: 'https://placehold.co/320x180/C0C0C0/111111?text=AZERTIX+Video+3',
-                credits: [
-                    { name: 'Antoine Leclerc', role: 'Producteur Exécutif' },
-                    { name: 'Émilie Beaulieu', role: 'Directrice Artistique' },
-                    { name: 'Nicolas Fournier', role: 'Éclairagiste' },
-                    { name: 'Olivia Girard', role: 'Ingénieure du son' },
-                ],
-                youtubeUrl: 'https://www.youtube.com/watch?v=another_video_id'
-            },
-            {
-                id: 'vid4',
-                title: 'Quatrième Vidéo - Guide Complet',
-                thumbnail: 'https://placehold.co/320x180/B0B0B0/000000?text=AZERTIX+Video+4',
-                credits: [
-                    { name: 'Gabriel Rousseau', role: 'Voix Off' },
-                    { name: 'Charlotte Lefevre', role: 'Animateur 2D' },
-                    { name: 'Jules Lambert', role: 'Développeur Logiciel' },
-                    { name: 'Manon Petit', role: 'Testeur QA' },
-                ],
-                youtubeUrl: 'https://www.youtube.com/watch?v=yet_another_video_id'
-            },
-
-            {
-    id: 'vid5', // Nouvel ID unique
-    title: 'Ma Super Nouvelle Vidéo - Le Futur est Là !',
-    thumbnail: 'https://placehold.co/320x180/A0A0A0/000000?text=AZERTIX+Video+5', // Nouvelle miniature
-    credits: [
-        { name: 'Alice Duval', role: 'Productrice' },
-        { name: 'Bob Martin', role: 'Scénariste' },
-        { name: 'Carole Petit', role: 'Actrice Principale' }
-    ],
-    youtubeUrl: 'https://www.youtube.com/watch?v=votre-url-youtube' // Votre URL YouTube réelle
-}
-        ];
-
-        const appRoot = document.getElementById('app-root');
-
-        // Fonction pour rendre la page des crédits d'une vidéo spécifique
-        function renderVideoCreditPage(videoId) {
-            const video = videosData.find(v => v.id === videoId);
-
-            if (!video) {
-                appRoot.innerHTML = `
-                    <div class="flex items-center justify-center min-h-screen bg-gray-50 text-light-body">
-                        <p class="text-xl">Vidéo non trouvée. <a href="index.html" class="text-blue-600 hover:underline">Retour à l'accueil</a></p>
+    <main>
+        <!-- PAGE ACCUEIL -->
+        <div id="page-home" class="page active">
+            <section class="hero-section py-16">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mb-6 shadow-lg">
+                            <span class="font-['Pacifico'] text-3xl text-white">A</span>
+                        </div>
+                        <h1 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Crédits des Vidéos d'Azertix</h1>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8">Découvrez toutes les ressources et collaborateurs qui ont contribué aux créations d'Azertix.</p>
+                        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+                            <a href="#derniers-credits-anchor" class="neon-button bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Derniers Crédits</a>
+                            <a href="#" data-page="missing-credits" class="page-link neon-button bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Signaler un Crédit Manquant</a>
+                        </div>
                     </div>
-                `;
-                return;
-            }
+                </div>
+            </section>
+            
+            <section id="derniers-credits-anchor" class="py-16 bg-white dark:bg-gray-800">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+                        <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Derniers Crédits</h2>
+                        <a href="#" data-page="all-credits" class="page-link text-primary dark:text-indigo-400 font-medium flex items-center hover:underline">
+                            Voir tout <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                    <div id="home-videos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                </div>
+            </section>
 
-            appRoot.innerHTML = `
-                <div class="container mx-auto p-6">
-                    <a
-                        href="index.html"
-                        class="mb-6 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-200 flex items-center shadow-sm"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        Retour
-                    </a>
+            <section class="py-16 bg-gray-50 dark:bg-gray-900">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Vidéo en Vedette</h2>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg max-w-4xl mx-auto">
+                        <div class="relative pb-[56.25%] h-0">
+                             <img src="https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520a%2520Minecraft%2520mega%2520build%2C%2520epic%2520castle%2520with%2520dramatic%2520lighting%2C%2520sunset%2520or%2520sunrise%2C%2520high%2520quality%2520digital%2520art%2520with%2520stunning%2520architecture%2520details%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520composition&width=1280&height=720&seq=featured&orientation=landscape" alt="Vidéo en vedette" class="absolute inset-0 w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="title-font font-bold text-xl sm:text-2xl mb-3">Minecraft: Construction du Château Ultime</h3>
+                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4"><span>Série spéciale</span><span class="mx-2">•</span><span>1.2M vues</span></div>
+                            <p class="text-gray-700 dark:text-gray-300 mb-6">Cette série épique a nécessité 100+ heures de travail. Découvrez tous les crédits de cette réalisation.</p>
+                            <a href="#" data-video-id="minecraft-castle" class="view-credits-btn neon-button inline-block bg-primary text-white px-5 py-2.5 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Voir les crédits complets</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                    <div class="card-bg rounded-xl shadow-2xl p-6 lg:p-8 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 mb-8 border border-gray-200">
-                        <img
-                            src="${video.thumbnail}"
-                            alt="${video.title}"
-                            class="w-full md:w-64 h-auto rounded-lg shadow-lg border border-gray-100"
-                            onerror="this.onerror=null;this.src='https://placehold.co/320x180/E0E0E0/333333?text=Image+non+disponible';"
-                        />
-                        <div class="flex-1 text-center md:text-left">
-                            <h2 class="text-4xl font-extrabold text-light-heading mb-2">${video.title}</h2>
-                            <a
-                                href="${video.youtubeUrl}"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center text-red-600 hover:text-red-700 transition-colors duration-200 text-lg font-semibold"
-                            >
-                                Voir sur YouTube
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                                </svg>
+            <section class="py-16 bg-white dark:bg-gray-800">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Parcourir par Catégorie</h2>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                        <div class="bg-gradient-to-br from-primary/10 to-primary/20 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-gamepad-line text-primary text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">FPS</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Valorant, CS:GO</p></div>
+                        <div class="bg-gradient-to-br from-secondary/10 to-secondary/20 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-sword-line text-secondary text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">Battle Royale</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Fortnite, Warzone</p></div>
+                        <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-200 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-building-4-line text-purple-500 text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">Sandbox</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Minecraft</p></div>
+                        <div class="bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-team-line text-blue-500 text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">MOBA</h3><p class="text-gray-600 dark:text-gray-400 text-sm">League of Legends</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="max-w-2xl mx-auto text-center">
+                        <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">Restez Informé</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-8">Recevez une notification dès qu'une nouvelle vidéo et ses crédits sont publiés.</p>
+                        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                            <input type="email" placeholder="Votre adresse email" class="flex-1 px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                            <button type="submit" class="neon-button bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">S'abonner</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE TOUS LES CRÉDITS -->
+        <div id="page-all-credits" class="page">
+            <section class="py-16">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <h1 class="title-font text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-900 dark:text-white">Toutes les Vidéos</h1>
+                    <div id="all-videos-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE DÉTAILS D'UN CRÉDIT -->
+        <div id="page-details" class="page">
+             <div class="container mx-auto px-4 sm:px-6 py-12">
+                <div class="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-2/5 flex-shrink-0">
+                            <img id="detail-thumbnail" class="h-48 md:h-full w-full object-cover" src="" alt="">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col justify-center">
+                            <h1 id="detail-title" class="title-font text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white"></h1>
+                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 my-4">
+                                <span id="detail-date"></span><span class="mx-2">•</span><span id="detail-views"></span>
+                            </div>
+                            <p id="detail-description" class="text-gray-700 dark:text-gray-300 mb-6"></p>
+                            <a id="detail-youtube-link" href="#" target="_blank" class="mt-auto neon-button bg-red-600 text-white px-6 py-3 rounded-button font-bold flex items-center justify-center space-x-2 hover:bg-red-700 transition-colors w-full">
+                                <i class="ri-youtube-fill text-xl sm:text-2xl"></i><span>Voir sur YouTube</span>
                             </a>
                         </div>
                     </div>
+                </div>
+                <div id="detail-credits-container" class="max-w-5xl mx-auto mt-2 p-4 md:p-8"></div>
+            </div>
+        </div>
 
-                    <h3 class="text-3xl font-bold text-light-heading mb-6 text-center">Crédits de la vidéo</h3>
-                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        ${video.credits.map((credit, index) => `
-                            <li class="bg-gradient-to-br from-blue-50 to-indigo-100 p-5 rounded-lg shadow-md border border-blue-200 animate-fade-in">
-                                <p class="text-xl font-semibold text-gray-800 mb-1">${credit.name}</p>
-                                <p class="text-md text-gray-600">${credit.role}</p>
-                            </li>
-                        `).join('')}
+        <!-- PAGE CRÉDITS MANQUANTS -->
+        <div id="page-missing-credits" class="page">
+            <div class="container mx-auto px-4 sm:px-6 py-12">
+                <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8">
+                    <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">Signaler un Crédit Manquant</h1>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-center">Aidez-nous à maintenir des informations de crédit précises.</p>
+                    <form id="missing-credit-form" class="space-y-6">
+                        <div>
+                            <label for="form-video-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">URL de la vidéo *</label>
+                            <input type="url" id="form-video-url" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://youtube.com/watch?v=...">
+                        </div>
+                        <div>
+                            <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email (Optionnel)</label>
+                            <input type="email" id="form-contact-email" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="pour que nous puissions vous répondre">
+                        </div>
+                        <div>
+                            <label for="form-credit-details" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Détails du crédit *</label>
+                            <textarea id="form-credit-details" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" rows="4" placeholder="Donnez le plus de détails possible..."></textarea>
+                        </div>
+                        <button type="submit" id="submit-missing-credit-btn" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:bg-primary/90 transition-all">Soumettre le rapport</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 text-center sm:text-left">
+                <div>
+                    <a href="#" data-page="home" class="page-link flex items-center justify-center sm:justify-start mb-6"><span class="font-['Pacifico'] text-3xl text-white">Azertix</span></a>
+                    <p class="text-gray-400 mb-6">Plateforme dédiée à la reconnaissance des contributions créatives.</p>
+                    <div class="flex space-x-4 justify-center sm:justify-start">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-youtube-fill text-white"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-twitter-x-fill text-white"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="title-font font-bold text-lg mb-6">Navigation</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" data-page="home" class="page-link text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#" data-page="all-credits" class="page-link text-gray-400 hover:text-white transition-colors">Tous les Crédits</a></li>
+                        <li><a href="#" data-page="missing-credits" class="page-link text-gray-400 hover:text-white transition-colors">Crédits Manquants</a></li>
                     </ul>
                 </div>
-            `;
-        }
+                <div>
+                    <h3 class="title-font font-bold text-lg mb-6">Catégories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FPS</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Battle Royale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="title-font font-bold text-lg mb-6">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-center sm:justify-start"><i class="ri-mail-line text-primary mt-1 mr-3"></i><span class="text-gray-400">contact@azertix.com</span></li>
+                        <li class="flex items-center justify-center sm:justify-start"><i class="ri-discord-line text-primary mt-1 mr-3"></i><span class="text-gray-400">Serveur Discord</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">© 2025 Azertix Crédits. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 
-        // Charger la page des crédits avec l'ID de la vidéo
-        document.addEventListener('DOMContentLoaded', () => {
-            renderVideoCreditPage(videoId);
-        });
-    </script>
+    <!-- Lien vers le fichier JavaScript externe -->
+    <script src="script.js" defer></script>
+
 </body>
 </html>
