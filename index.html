@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azertix - Crédits YouTube</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuration Tailwind personnalisée -->
     <script>
         tailwind.config = {
             theme: {
@@ -23,15 +21,12 @@
             }
         }
     </script>
-    <!-- Polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Icônes Remix Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     
-    <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
@@ -39,10 +34,9 @@
     <header class="sticky top-0 z-50">
         <nav class="glassmorphism py-4 px-4 sm:px-6 flex items-center justify-between shadow-md">
             <a href="#" data-page="home" class="page-link flex items-center">
-                <span class="font-['Pacifico'] text-2xl text-primary">Azertix</span>
+                <img src="profil.png" alt="Logo Azertix" class="h-10 w-10 rounded-full object-cover">
             </a>
             
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-gray-800/50 rounded-full px-2 py-1 shadow-sm border border-gray-100 dark:border-gray-700">
                 <a href="#" data-page="home" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Accueil</a>
                 <a href="#" data-page="all-credits" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Tous les Crédits</a>
@@ -53,13 +47,11 @@
                 <button id="theme-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white dark:bg-gray-800/60 dark:hover:bg-gray-700 transition-colors">
                     <i id="theme-icon" class="ri-moon-line text-gray-700 dark:text-gray-200"></i>
                 </button>
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white dark:bg-gray-800/60 dark:hover:bg-gray-700 transition-colors">
                     <i id="mobile-menu-icon" class="ri-menu-line text-gray-700 dark:text-gray-200"></i>
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg">
             <a href="#" data-page="home" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Accueil</a>
             <a href="#" data-page="all-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Tous les Crédits</a>
@@ -68,14 +60,11 @@
     </header>
 
     <main>
-        <!-- PAGE ACCUEIL -->
         <div id="page-home" class="page active">
             <section class="hero-section py-16">
                 <div class="container mx-auto px-4 sm:px-6">
                     <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
-                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mb-6 shadow-lg">
-                            <span class="font-['Pacifico'] text-3xl text-white">A</span>
-                        </div>
+                        <img src="profil.png" alt="Profil Azertix" class="w-24 h-24 rounded-full object-cover mb-6 shadow-lg">
                         <h1 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Crédits des Vidéos d'Azertix</h1>
                         <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8">Découvrez toutes les ressources et collaborateurs qui ont contribué aux créations d'Azertix.</p>
                         <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
@@ -141,7 +130,6 @@
             </section>
         </div>
 
-        <!-- PAGE TOUS LES CRÉDITS -->
         <div id="page-all-credits" class="page">
             <section class="py-16">
                 <div class="container mx-auto px-4 sm:px-6">
@@ -151,7 +139,6 @@
             </section>
         </div>
 
-        <!-- PAGE DÉTAILS D'UN CRÉDIT -->
         <div id="page-details" class="page">
              <div class="container mx-auto px-4 sm:px-6 py-12">
                 <div class="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
@@ -175,8 +162,7 @@
             </div>
         </div>
 
-        <!-- PAGE CRÉDITS MANQUANTS -->
-        <div id="page-missing-credits" class="page active">
+        <div id="page-missing-credits" class="page">
             <div class="container mx-auto px-4 sm:px-6 py-12">
                 <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8">
                     
@@ -185,12 +171,6 @@
                        <p class="text-gray-600 dark:text-gray-300 mb-8">Aidez-nous à maintenir des informations de crédit précises en remplissant tous les champs.</p>
                     </div>
 
-                    <!-- 
-                        INSTRUCTIONS IMPORTANTES POUR L'ENVOI D'EMAIL :
-                        Ce formulaire utilise Formspree pour envoyer les données à votre email (baptiste@boin.uk).
-                        Lors de la soumission, l'utilisateur sera redirigé vers une page de confirmation de Formspree.
-                        Aucun script côté client n'est nécessaire pour ce fonctionnement de base.
-                    -->
                     <form id="missing-credit-form" action="https://formspree.io/f/xnnvobnd" method="POST" class="space-y-6">
                         
                         <div>
@@ -238,7 +218,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 text-center sm:text-left">
                 <div>
                     <a href="#" data-page="home" class="page-link flex items-center justify-center sm:justify-start mb-6">
-                        <span class="font-['Pacifico'] text-3xl text-white">Azertix</span>
+                         <img src="profil.png" alt="Logo Azertix" class="h-12 w-12 rounded-full object-cover">
                     </a>
                     <p class="text-gray-400 mb-6">Plateforme dédiée à la reconnaissance des contributions créatives.</p>
                     <div class="flex space-x-4 justify-center sm:justify-start">
@@ -275,7 +255,6 @@
         </div>
     </footer>
 
-    <!-- Lien vers le fichier JavaScript externe -->
     <script src="script.js" defer></script>
 
 </body>
