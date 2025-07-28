@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Base de données des vidéos (simulée)
     const videoDatabase = [
-        { id: 'Cities Skylines 2 #1', title: 'Cities Skylines 2 - Bienvenue a Lake Arbor #1', thumbnail: 'https://github.com/Baptiste-Boin/credits-azertix/blob/main/cities%20skylines%202%20miniature%20%231.png', duration: '20:52', date: '28 juillet 2025', views: 'Non definies vues', description: '
+        { id: 'Cities Skylines 2 #1', title: 'Cities Skylines 2 - Bienvenue a Lake Arbor #1', thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png', duration: '20:52', date: '28 juillet 2025', views: 'Non definies vues', description: '
             🎮 Bienvenue à Lake Arbor sur Cities Skylines 2 !
 
 Aujourd’hui, on démarre une toute nouvelle aventure urbaine avec Lake Arbor. Une ville que nous allons construire de A à Z dans Cities Skylines 2. 🌆
