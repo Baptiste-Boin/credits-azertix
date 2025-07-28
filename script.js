@@ -34,15 +34,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         duration: '22:37',
         date: '21 juin 2025',
         views: '356 vues',
-        description: 'Aujourd'hui je découvre Rematch c’est vraiment trop bien 
-
-N'/oubliez pas de vous abonner, de liker et de commenter./
-Activez la cloche de notifications pour ne rien manquer de mes prochains lives ou vidéos 
-
-📸 Suivez-moi sur les réseaux sociaux :
-
-Twitter : YTAzerTix
-Instagram : YTAzerTix',
+        description: '',
         youtubeLink: '#',
         credits: {
             Shaders: [{ name: 'BSL Shaders', by: 'capttatsu' }],
