@@ -16,6 +16,11 @@
                     borderRadius: {
                         'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px',
                         'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px'
+                    },
+                    fontFamily: { // Added font families for better control
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Orbitron', 'sans-serif'],
+                        handwriting: ['Pacifico', 'cursive']
                     }
                 }
             }
@@ -23,25 +28,42 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for glassmorphism effect */
+        .glassmorphism {
+            background-color: rgba(255, 255, 255, 0.5); /* White with transparency */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+        }
+        .dark .glassmorphism {
+            background-color: rgba(31, 41, 55, 0.5); /* Dark gray with transparency */
+            border: 1px solid rgba(75, 85, 99, 0.3); /* Darker border */
+        }
+        /* Active nav link styling */
+        .nav-link.active {
+            background-color: theme('colors.primary'); /* Use Tailwind primary color */
+            color: white;
+            box-shadow: theme('boxShadow.md');
+        }
+    </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900">
+<body class="bg-gray-50 dark:bg-gray-900 font-sans">
 
     <header class="sticky top-0 z-50">
         <nav class="glassmorphism py-4 px-4 sm:px-6 flex items-center justify-between shadow-md">
             <a href="index.html" class="flex items-center">
-                <img src="profil.png" alt="Logo Azertix" class="h-10 w-10 rounded-full object-cover">
+                <img src="https://placehold.co/40x40/6d28d9/ffffff?text=AZ" alt="Logo Azertix" class="h-10 w-10 rounded-full object-cover">
             </a>
             
             <div class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-gray-800/50 rounded-full px-2 py-1 shadow-sm border border-gray-100 dark:border-gray-700">
-                <a href="index.html" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full">Accueil</a>
-                <a href="index.html#all-credits-section" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full">Tous les Crédits</a>
-                <a href="index.html#missing-credits-section" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full">Crédits Manquants</a>
-                <a href="recrutement.html" class="nav-link active px-4 py-2 text-gray-700 font-medium rounded-full">Recrutement</a>
+                <a href="index.html" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Accueil</a>
+                <a href="index.html#all-credits-section" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Tous les Crédits</a>
+                <a href="index.html#missing-credits-section" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Crédits Manquants</a>
+                <a href="recrutement.html" class="nav-link active px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Recrutement</a>
             </div>
             
             <div class="flex items-center space-x-2">
@@ -70,16 +92,29 @@
                    <p class="text-gray-600 dark:text-gray-300 mb-8">Envie de contribuer au développement du site ? Remplissez le formulaire ci-dessous pour nous faire part de vos motivations !</p>
                 </div>
 
-                <form id="recruitment-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                <form id="recruitment-form" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST" class="space-y-6">
                     
                     <div>
-                        <label for="form-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom ou Pseudo *</label>
+                        <label for="form-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom et Prénom *</label>
                         <input type="text" id="form-name" name="name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Jean Dupont">
                     </div>
                     
                     <div>
                         <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email de contact *</label>
                         <input type="email" id="form-contact-email" name="contact_email" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Pour que nous puissions vous répondre">
+                    </div>
+
+                    <div>
+                        <label for="form-age" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre âge *</label>
+                        <select id="form-age" name="age" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Sélectionnez votre tranche d'âge</option>
+                            <option value="moins-18">Moins de 18 ans</option>
+                            <option value="18-24">18 - 24 ans</option>
+                            <option value="25-34">25 - 34 ans</option>
+                            <option value="35-44">35 - 44 ans</option>
+                            <option value="45-54">45 - 54 ans</option>
+                            <option value="55-plus">55 ans et plus</option>
+                        </select>
                     </div>
 
                     <div>
@@ -93,15 +128,24 @@
                                 <input type="checkbox" name="skills[]" value="design" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
                                 <span class="text-gray-700 dark:text-gray-300">Design (UI/UX)</span>
                             </label>
-                            <label class="flex items-center space-x-3">
-                                <input type="checkbox" name="skills[]" value="writing" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
-                                <span class="text-gray-700 dark:text-gray-300">Rédaction</span>
-                            </label>
                              <label class="flex items-center space-x-3">
                                 <input type="checkbox" name="skills[]" value="other" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
                                 <span class="text-gray-700 dark:text-gray-300">Autre</span>
                             </label>
                         </div>
+                    </div>
+
+                    <div>
+                        <label for="form-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Rôle souhaité *</label>
+                        <select id="form-role" name="desired_role" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Sélectionnez le rôle qui vous intéresse</option>
+                            <option value="frontend-dev">Développeur Front-end</option>
+                            <option value="backend-dev">Développeur Back-end</option>
+                            <option value="fullstack-dev">Développeur Full-stack</option>
+                            <option value="ui-ux-designer">Designer UI/UX</option>
+                            <option value="content-manager">Gestionnaire de Contenu</option>
+                            <option value="other-role">Autre rôle</option>
+                        </select>
                     </div>
 
                     <div>
@@ -114,9 +158,20 @@
                         <input type="url" id="form-portfolio" name="portfolio" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://github.com/votre-pseudo">
                     </div>
 
+                    <div class="flex items-center">
+                        <input type="checkbox" id="privacy-consent" name="privacy_consent" required class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
+                        <label for="privacy-consent" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                            J'accepte que mes données soient utilisées pour le traitement de ma candidature. *
+                        </label>
+                    </div>
+
                     <button type="submit" class="w-full bg-gradient-to-r from-secondary to-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all duration-200">
                         Envoyer ma candidature
                     </button>
+
+                    <div id="success-message" class="hidden mt-4 p-4 rounded-lg bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100 text-center">
+                        Votre candidature a été envoyée avec succès ! Redirection vers l'accueil...
+                    </div>
                 </form>
             </div>
         </div>
@@ -127,9 +182,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 text-center sm:text-left">
                 <div>
                     <a href="index.html" class="flex items-center justify-center sm:justify-start mb-6">
-                         <img src="profil.png" alt="Logo Azertix" class="h-12 w-12 rounded-full object-cover">
+                         <img src="https://placehold.co/48x48/6d28d9/ffffff?text=AZ" alt="Logo Azertix" class="h-12 w-12 rounded-full object-cover">
                     </a>
-                    <p class="text-gray-400 mb-6">Tu retrouvera toute les musique que j'utilise ou les personnes qui participe a mes tournages.</p>
+                    <p class="text-gray-400 mb-6">Tu retrouveras toutes les musiques que j'utilise ou les personnes qui participent à mes tournages.</p>
                     <div class="flex space-x-4 justify-center sm:justify-start">
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-youtube-fill text-white"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-twitter-x-fill text-white"></i></a>
@@ -166,7 +221,6 @@
     </footer>
 
     <script>
-        // Script simple pour le menu mobile et le thème sombre sur cette page
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -199,6 +253,41 @@
             
             const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
             applyTheme(savedTheme);
+
+            // Form submission handling
+            const recruitmentForm = document.getElementById('recruitment-form');
+            const successMessage = document.getElementById('success-message');
+
+            recruitmentForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent default form submission
+
+                // You would typically send the form data to Formspree or your backend here
+                // For demonstration, we'll just log it and simulate success.
+                const formData = new FormData(recruitmentForm);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    if (key === 'skills[]') {
+                        if (!data[key]) {
+                            data[key] = [];
+                        }
+                        data[key].push(value);
+                    } else {
+                        data[key] = value;
+                    }
+                }
+                console.log('Form Data:', data);
+
+                // Simulate API call delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Show success message
+                successMessage.classList.remove('hidden');
+
+                // Redirect to homepage after 3 seconds
+                setTimeout(() => {
+                    window.location.href = 'index.html'; 
+                }, 3000); // 3000 milliseconds = 3 seconds
+            });
         });
     </script>
 
