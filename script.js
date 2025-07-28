@@ -6,7 +6,7 @@ const videoDatabase = [
     {
         id: 'Cities Skylines 2 #1',
         title: 'Cities Skylines 2 - Bienvenue à Lake Arbor #1',
-        thumbnail: 'https://i.imgur.com/kQJvZKH.png' // Remplace avec un lien direct vers l’image
+        thumbnail: 'https://i.imgur.com/XYZ123.png' // Remplace avec un lien direct vers l’image
         duration: '20:52',
         date: '28 juillet 2025',
         views: 'Non définies vues',
