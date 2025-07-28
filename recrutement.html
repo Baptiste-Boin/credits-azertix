@@ -111,31 +111,16 @@
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Vos compétences *</label>
-                        <div class="grid grid-cols-2 gap-4">
-                            <label class="flex items-center space-x-3">
-                                <input type="checkbox" name="skills[]" value="development" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
-                                <span class="text-gray-700 dark:text-gray-300">Développement</span>
-                            </label>
-                            <label class="flex items-center space-x-3">
-                                <input type="checkbox" name="skills[]" value="design" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
-                                <span class="text-gray-700 dark:text-gray-300">Design (UI/UX)</span>
-                            </label>
-                             <label class="flex items-center space-x-3">
-                                <input type="checkbox" name="skills[]" value="other" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
-                                <span class="text-gray-700 dark:text-gray-300">Autre</span>
-                            </label>
-                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">Nous recherchons un développeur pour le développement du site en HTML, CSS et JavaScript.</p>
+                        <!-- Checkboxes for skills removed as per request -->
                     </div>
 
                     <div>
                         <label for="form-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Rôle souhaité *</label>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">Ce rôle n'est pas rémunéré.</p>
                         <select id="form-role" name="desired_role" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
                             <option value="">Sélectionnez le rôle qui vous intéresse</option>
-                            <option value="frontend-dev">Développeur Front-end</option>
-                            <option value="backend-dev">Développeur Back-end</option>
-                            <option value="fullstack-dev">Développeur Full-stack</option>
-                            <option value="ui-ux-designer">Designer UI/UX</option>
-                            <option value="content-manager">Gestionnaire de Contenu</option>
+                            <option value="frontend-dev">Développeur Front-end (HTML, CSS, JS)</option>
                             <option value="other-role">Autre rôle</option>
                         </select>
                     </div>
@@ -258,6 +243,8 @@
                 const formData = new FormData(recruitmentForm);
                 const data = {};
                 for (let [key, value] of formData.entries()) {
+                    // Handle skills[] if it were still checkboxes, but now it's just a static text, so this part is less critical for the current form structure.
+                    // However, keeping it general for future additions.
                     if (key === 'skills[]') {
                         if (!data[key]) {
                             data[key] = [];
