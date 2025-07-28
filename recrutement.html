@@ -106,15 +106,7 @@
 
                     <div>
                         <label for="form-age" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre âge *</label>
-                        <select id="form-age" name="age" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option value="">Sélectionnez votre tranche d'âge</option>
-                            <option value="moins-18">Moins de 18 ans</option>
-                            <option value="18-24">18 - 24 ans</option>
-                            <option value="25-34">25 - 34 ans</option>
-                            <option value="35-44">35 - 44 ans</option>
-                            <option value="45-54">45 - 54 ans</option>
-                            <option value="55-plus">55 ans et plus</option>
-                        </select>
+                        <input type="number" id="form-age" name="age" required min="13" max="100" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: 25">
                     </div>
 
                     <div>
