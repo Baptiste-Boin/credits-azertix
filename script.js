@@ -28,13 +28,21 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         }
     },
     {
-        id: 'minecraft-castle',
-        title: 'Minecraft: Construction du Château Ultime (Partie 3)',
-        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520Minecraft%2520with%2520impressive%2520build%2C%2520dramatic%2520lighting%2C%2520epic%2520castle%2520or%2520structure%2C%2520high%2520quality%2520digital%2520art%2520with%2520vibrant%2520colors%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520composition&width=640&height=360&seq=vid2&orientation=landscape',
+        id: 'rematch-decouverte',
+        title: 'Rematch - Découverte du jeux (il est trop bien)',
+        thumbnail: 'https://i9.ytimg.com/vi_webp/9Q5nOQizCbk/mqdefault.webp?v=68558af1&sqp=CPzLn8QG&rs=AOn4CLCUUDtIwWkb1ThYoBDSIN9AaA9Qkw',
         duration: '22:37',
-        date: '20 juin 2025',
-        views: '189K vues',
-        description: 'Finalisation de notre méga-construction avec des techniques avancées et des mods exclusifs.',
+        date: '21 juin 2025',
+        views: '356 vues',
+        description: 'Aujourd'hui je découvre Rematch c’est vraiment trop bien 
+
+N'/oubliez pas de vous abonner, de liker et de commenter./
+Activez la cloche de notifications pour ne rien manquer de mes prochains lives ou vidéos 
+
+📸 Suivez-moi sur les réseaux sociaux :
+
+Twitter : YTAzerTix
+Instagram : YTAzerTix',
         youtubeLink: '#',
         credits: {
             Shaders: [{ name: 'BSL Shaders', by: 'capttatsu' }],
