@@ -6,7 +6,7 @@ const videoDatabase = [
     {
         id: 'Cities Skylines 2 #1',
         title: 'Cities Skylines 2 - Bienvenue à Lake Arbor #1',
-        thumbnail: 'https://i9.ytimg.com/vi/9Q5nOQizCbk/mqdefault.jpg?v=68558af1&sqp=CPT_osQG&rs=AOn4CLAfSlvWweK0Yc-AdJbEG6IQ45g51w',  //'https://i.imgur.com/kQJvZKH.png', // Remplace avec un lien direct vers l’image
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png',  //'https://i.imgur.com/kQJvZKH.png', // Remplace avec un lien direct vers l’image
         duration: '20:52',
         date: '28 juillet 2025',
         views: 'Non définies vues',
