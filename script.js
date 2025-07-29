@@ -9,7 +9,7 @@ const videoDatabase = [
         thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png',  //'https://i.imgur.com/kQJvZKH.png', // Remplace avec un lien direct vers l’image
         duration: '20:52',
         date: '28 juillet 2025',
-        views: 'Non définies vues',
+        views: '2 vues',
         description: `🎮 Bienvenue à Lake Arbor sur Cities Skylines 2 !
 
 Aujourd’hui on démarre une toute nouvelle aventure urbaine avec Lake Arbor. Une ville que nous allons construire de A à Z dans Cities Skylines 2 🌆
@@ -28,6 +28,48 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         }
     },
     {
+        id: 'best-of-kill',
+        title: 'BLACK OPS 6 - Best Of Kills 💣',
+        thumbnail: 'https://i9.ytimg.com/vi_webp/9Q5nOQizCbk/mqdefault.webp?v=68558af1&sqp=CPzLn8QG&rs=AOn4CLCUUDtIwWkb1ThYoBDSIN9AaA9Qkw',
+        duration: '2:27',
+        date: '25 juillet 2025',
+        views: '26 vues',
+        description: '🎮 Aujourd’hui, place à un Best Of Kills sur Black Ops 6 💣
+💬 Dis-moi en commentaire si toi aussi tu joues a Black Ops 6 
+
+👍 N’oublie pas de t’abonner, de liker et de commenter 💬
+🔔 Active la cloche pour ne rien rater des prochaines vidéos et lives !
+
+📸 Suis-moi ici :
+👉 Twitter : @YTAzerTix
+👉 Instagram : @YTAzerTix',
+        youtubeLink: 'https://youtu.be/VomI7-rLtPE',
+        credits: {
+            Musique: [
+                { name: 'SHOWTIME', by: 'Cushy' },
+                { name: 'Pomme', by: 'Ch@ntarelle' }
+            ],
+            
+            Contributeurs: [
+                { name: 'AzerTix', by: 'Gameplay' },
+                { name: 'AzerTix', by: 'Montage' }
+            ]
+        }
+    },
+    {
+        id: 'fortnite-skins',
+        title: 'Top 10 Skins Fortnite que Vous Devez Absolument Avoir',
+        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520Fortnite%2520battle%2520royale%2520action%2C%2520character%2520with%2520cool%2520skin%2520in%2520dynamic%2520pose%2C%2520vibrant%2520colors%2C%2520high%2520quality%2520digital%2520art%2520with%2520action%2520composition%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520look&width=640&height=360&seq=vid3&orientation=landscape',
+        duration: '15:42',
+        date: '18 juin 2025',
+        views: '312K vues',
+        description: 'Découvrez les skins les plus rares et les plus stylés disponibles actuellement sur Fortnite.',
+        youtubeLink: '#',
+        credits: {
+            Recherche: [{ name: 'SkinBase', by: 'Données sur la rareté' }]
+        }
+    },
+    {
         id: 'rematch-decouverte',
         title: 'Rematch - Découverte du jeux (il est trop bien)',
         thumbnail: 'https://i9.ytimg.com/vi_webp/9Q5nOQizCbk/mqdefault.webp?v=68558af1&sqp=CPzLn8QG&rs=AOn4CLCUUDtIwWkb1ThYoBDSIN9AaA9Qkw',
@@ -43,19 +85,6 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
                 { name: 'BuilderPro', by: 'Design' },
                 { name: 'RedstoneMaster', by: 'Systèmes' }
             ]
-        }
-    },
-    {
-        id: 'fortnite-skins',
-        title: 'Top 10 Skins Fortnite que Vous Devez Absolument Avoir',
-        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520Fortnite%2520battle%2520royale%2520action%2C%2520character%2520with%2520cool%2520skin%2520in%2520dynamic%2520pose%2C%2520vibrant%2520colors%2C%2520high%2520quality%2520digital%2520art%2520with%2520action%2520composition%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520look&width=640&height=360&seq=vid3&orientation=landscape',
-        duration: '15:42',
-        date: '18 juin 2025',
-        views: '312K vues',
-        description: 'Découvrez les skins les plus rares et les plus stylés disponibles actuellement sur Fortnite.',
-        youtubeLink: '#',
-        credits: {
-            Recherche: [{ name: 'SkinBase', by: 'Données sur la rareté' }]
         }
     },
     {
