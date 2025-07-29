@@ -239,35 +239,45 @@
                 event.preventDefault(); // Prevent default form submission
 
                 // You would typically send the form data to Formspree or your backend here
-                // For demonstration, we'll just log it and simulate success.
-                const formData = new FormData(recruitmentForm);
-                const data = {};
-                for (let [key, value] of formData.entries()) {
-                    // Handle skills[] if it were still checkboxes, but now it's just a static text, so this part is less critical for the current form structure.
-                    // However, keeping it general for future additions.
-                    if (key === 'skills[]') {
-                        if (!data[key]) {
-                            data[key] = [];
+                // Gestion de la soumission du formulaire
+            const recruitmentForm = document.getElementById('recruitment-form');
+            const successMessage = document.getElementById('success-message');
+
+            recruitmentForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Empêche la soumission par défaut du formulaire pour la gérer avec fetch
+
+                const form = event.target;
+                const formData = new FormData(form); // Crée un objet FormData à partir des champs du formulaire
+                const formUrl = form.action; // Récupère l'URL d'action du formulaire (Formspree dans ce cas)
+
+                try {
+                    // Envoie les données du formulaire à l'URL d'action
+                    const response = await fetch(formUrl, {
+                        method: form.method, // Utilise la méthode POST spécifiée dans le formulaire HTML
+                        body: formData, // Les données du formulaire
+                        headers: {
+                            'Accept': 'application/json' // Indique à Formspree que nous attendons une réponse JSON
                         }
-                        data[key].push(value);
+                    });
+
+                    if (response.ok) { // Vérifie si la requête a réussi (code statut 2xx)
+                        successMessage.classList.remove('hidden'); // Affiche le message de succès
+                        // Redirection vers la page d'accueil après 3 secondes
+                        setTimeout(() => {
+                            window.location.href = 'index.html'; 
+                        }, 3000); // 3000 millisecondes = 3 secondes
                     } else {
-                        data[key] = value;
+                        // Gère les erreurs provenant de Formspree ou de votre backend
+                        const errorData = await response.json(); // Tente de lire le corps de la réponse comme JSON
+                        console.error('Échec de la soumission du formulaire :', response.status, errorData);
+                        alert('Une erreur est survenue lors de l\'envoi de votre candidature. Veuillez réessayer.');
                     }
+                } catch (error) {
+                    // Gère les erreurs de réseau (ex: pas de connexion internet)
+                    console.error('Erreur de réseau ou de soumission :', error);
+                    alert('Une erreur de connexion est survenue. Veuillez vérifier votre connexion internet et réessayer.');
                 }
-                console.log('Form Data:', data);
-
-                // Simulate API call delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
-                // Show success message
-                successMessage.classList.remove('hidden');
-
-                // Redirect to homepage after 3 seconds
-                setTimeout(() => {
-                    window.location.href = 'index.html'; 
-                }, 3000); // 3000 milliseconds = 3 seconds
             });
-        });
     </script>
 
 </body>
