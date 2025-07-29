@@ -34,15 +34,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         duration: '2:27',
         date: '25 juillet 2025',
         views: '26 vues',
-        description: '🎮 Aujourd’hui, place à un Best Of Kills sur Black Ops 6 💣
-💬 Dis-moi en commentaire si toi aussi tu joues a Black Ops 6 
-
-👍 N’oublie pas de t’abonner, de liker et de commenter 💬
-🔔 Active la cloche pour ne rien rater des prochaines vidéos et lives !
-
-📸 Suis-moi ici :
-👉 Twitter : @YTAzerTix
-👉 Instagram : @YTAzerTix',
+        description: '🎮 Aujourd’hui, place à un Best Of Kills sur Black Ops 6 💣',
         youtubeLink: 'https://youtu.be/VomI7-rLtPE',
         credits: {
             Musique: [
