@@ -30,7 +30,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
     {
         id: 'best-of-kill',
         title: 'BLACK OPS 6 - Best Of Kills 💣',
-        thumbnail: 'https://i9.ytimg.com/vi_webp/9Q5nOQizCbk/mqdefault.webp?v=68558af1&sqp=CPzLn8QG&rs=AOn4CLCUUDtIwWkb1ThYoBDSIN9AaA9Qkw',
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/blackops6bestofkill1.png',
         duration: '2:27',
         date: '25 juillet 2025',
         views: '26 vues',
