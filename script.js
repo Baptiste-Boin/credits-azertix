@@ -15,7 +15,7 @@ const videoDatabase = [
 Aujourd’hui on démarre une toute nouvelle aventure urbaine avec Lake Arbor. Une ville que nous allons construire de A à Z dans Cities Skylines 2 🌆
 
 Pour ce premier épisode, nous allons mettre en place le train et la première zone résidentielle.`,
-        youtubeLink: '#',
+        youtubeLink: 'https://youtu.be/UcoLkhG2AVs',
         credits: {
             Musique: [
                 { name: 'Lost in Dreams', by: 'dvine' },
