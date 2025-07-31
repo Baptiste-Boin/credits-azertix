@@ -4,12 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Base de données des vidéos (simulée)
 const videoDatabase = [
     {
+        id: 'Cities Skylines 2 #2',
+        title: 'Cities Skylines 2 - Première zone industrielle a Lake Arbor #2',
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png',  
+        duration: '18:28',
+        date: '01 Aout 2025',
+        views: '0 vues',
+        description: `🎮 Bienvenue à Lake Arbor sur Cities Skylines 2 !
+
+Pour ce deuxième épisode, nous allons installer la première zone industrielle et installer de nouveaux commerces et maisons.`,
+        youtubeLink: 'https://youtu.be/',
+        credits: {
+            Musique: [
+                { name: 'I Only Know Never (Instrumental Version)', by: 'Zorro' },
+                { name: 'Timelapse', by: 'Phello' },
+                { name: 'Pomme', by: 'Ch@ntarelle' }
+            ],
+            Contributeurs: [
+                { name: 'AzerTix', by: 'Gameplay' },
+                { name: 'AzerTix', by: 'Montage' }
+            ]
+        }
+    },
+    {
         id: 'Cities Skylines 2 #1',
         title: 'Cities Skylines 2 - Bienvenue à Lake Arbor #1',
-        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png',  //'https://i.imgur.com/kQJvZKH.png', // Remplace avec un lien direct vers l’image
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png', 
         duration: '20:52',
-        date: '28 juillet 2025',
-        views: '2 vues',
+        date: '28 Juillet 2025',
+        views: '13 vues',
         description: `🎮 Bienvenue à Lake Arbor sur Cities Skylines 2 !
 
 Aujourd’hui on démarre une toute nouvelle aventure urbaine avec Lake Arbor. Une ville que nous allons construire de A à Z dans Cities Skylines 2 🌆
@@ -32,7 +55,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         title: 'BLACK OPS 6 - Best Of Kills 💣',
         thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/blackops6bestofkill1.png',
         duration: '2:27',
-        date: '25 juillet 2025',
+        date: '25 Juillet 2025',
         views: '26 vues',
         description: '🎮 Aujourd’hui, petit Best Of Kills sur Black Ops 6 💣',
         youtubeLink: 'https://youtu.be/VomI7-rLtPE',
@@ -47,7 +70,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
                 { name: 'AzerTix', by: 'Montage' }
             ]
         }
-    },
+    }
     
 ];
 
