@@ -1,1 +1,56 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions d’Utilisation - Azertix</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-6">
+  <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8">
+    <h1 class="text-3xl font-bold mb-6 text-primary">Conditions d’Utilisation</h1>
+
+    <p class="mb-4">Bienvenue sur le site d’Azertix. En accédant à ce site ou en utilisant nos services, vous acceptez les présentes conditions d’utilisation. Merci de les lire attentivement.</p>
+
+    <ol class="space-y-4 list-decimal list-inside">
+      <li>
+        <strong>Acceptation des Conditions</strong><br>
+        En naviguant sur ce site, vous déclarez avoir pris connaissance des présentes conditions et les accepter sans réserve, ainsi que notre Politique de Confidentialité. Si vous n’y consentez pas, veuillez ne pas utiliser ce site.
+      </li>
+      <li>
+        <strong>Utilisation du Site</strong><br>
+        Le site est destiné à partager les crédits des créations d’Azertix, ainsi qu'à faciliter le recrutement pour les projets. Vous vous engagez à utiliser ce site dans le respect des lois et à ne pas nuire à son bon fonctionnement.
+      </li>
+      <li>
+        <strong>Propriété Intellectuelle</strong><br>
+        Tous les contenus présents sur le site (textes, images, logos, vidéos, codes, etc.) sont la propriété exclusive d’Azertix, sauf mention contraire. Toute reproduction ou utilisation non autorisée est interdite.
+      </li>
+      <li>
+        <strong>Compte Utilisateur (si applicable)</strong><br>
+        Si vous créez un compte, vous êtes responsable de sa confidentialité. Toute activité effectuée via votre compte est de votre responsabilité.
+      </li>
+      <li>
+        <strong>Liens Externes</strong><br>
+        Le site peut contenir des liens vers des services tiers. Azertix ne peut être tenu responsable du contenu ou des pratiques de ces sites externes.
+      </li>
+      <li>
+        <strong>Limitation de Responsabilité</strong><br>
+        L’usage de ce site se fait à vos risques. Azertix ne pourra être tenu responsable d’éventuels dommages ou pertes liés à son utilisation ou à son indisponibilité.
+      </li>
+      <li>
+        <strong>Modifications</strong><br>
+        Ces conditions peuvent être modifiées à tout moment. La version à jour est toujours disponible sur ce site. L’usage continu du site vaut acceptation des éventuelles mises à jour.
+      </li>
+      <li>
+        <strong>Droit Applicable</strong><br>
+        Les présentes conditions sont soumises au droit français.
+      </li>
+      <li>
+        <strong>Contact</strong><br>
+        Pour toute question : <strong>ytazertix@gmail.com</strong>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
