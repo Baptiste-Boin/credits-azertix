@@ -6,7 +6,8 @@ const videoDatabase = [
     {
         id: 'Cities Skylines 2 #2',
         title: 'Cities Skylines 2 - Première zone industrielle a Lake Arbor #2',
-        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png',  
+        // Updated thumbnail path from .png to .jpg
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.jpg',  
         duration: '18:28',
         date: '01 Aout 2025',
         views: '0 vues',
@@ -29,7 +30,8 @@ Pour ce deuxième épisode, nous allons installer la première zone industrielle
     {
         id: 'Cities Skylines 2 #1',
         title: 'Cities Skylines 2 - Bienvenue à Lake Arbor #1',
-        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.png', 
+        // Updated thumbnail path from .png to .jpg
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.jpg', 
         duration: '20:52',
         date: '28 Juillet 2025',
         views: '13 vues',
@@ -53,7 +55,8 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
     {
         id: 'best-of-kill',
         title: 'BLACK OPS 6 - Best Of Kills 💣',
-        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/blackops6bestofkill1.png',
+        // Updated thumbnail path from .png to .jpg
+        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/blackops6bestofkill1.jpg',
         duration: '2:27',
         date: '25 Juillet 2025',
         views: '26 vues',
