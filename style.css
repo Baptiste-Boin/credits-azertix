@@ -27,44 +27,258 @@ html {
 
 
 /* Styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9ff;
-    transition: background-color 0.3s ease;
+    background: radial-gradient(ellipse at top, rgba(109, 40, 217, 0.1) 0%, rgba(79, 70, 229, 0.05) 50%, transparent 100%);
+    min-height: 100vh;
+    transition: all 0.3s ease;
     color: #1f2937; /* Couleur de texte par défaut pour le mode clair */
 }
 
 /* Mode Sombre (s'applique à tout le document) */
-html.dark body { background-color: #111827; }
-html.dark .video-card, html.dark .bg-white { background-color: #1f2937; }
-html.dark .video-card { border-color: #374151; }
-html.dark .text-gray-900 { color: #f3f4f6; }
-html.dark .text-gray-700 { color: #d1d5db; }
-html.dark .text-gray-600 { color: #9ca3af; }
-html.dark .text-gray-500 { color: #6b7280; }
-html.dark .bg-gray-50 { background-color: #111827; }
-html.dark .border-gray-100 { border-color: #374151; }
-html.dark .glassmorphism { background: rgba(31, 41, 55, 0.7); backdrop-filter: blur(10px); border-color: rgba(55, 65, 81, 0.5); }
-html.dark .bg-gradient-to-r { background-image: linear-gradient(to right, rgba(109, 40, 217, 0.1), rgba(79, 70, 229, 0.1)); }
+body.dark {
+    background: radial-gradient(ellipse at top, rgba(26, 26, 46, 1) 0%, rgba(17, 24, 39, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    color: #e0e0e0;
+}
 
-.title-font { font-family: 'Orbitron', sans-serif; }
+/* General Dark Mode Overrides */
+.dark .text-gray-900 { color: #e0e0e0; }
+.dark .text-gray-700 { color: #d1d5db; }
+.dark .text-gray-600 { color: #9ca3af; }
+.dark .text-gray-500 { color: #6b7280; }
+.dark .bg-white { background-color: rgba(39, 41, 61, 0.8); }
+.dark .bg-gray-50 { background-color: rgba(26, 26, 46, 0.8); }
+.dark .border-gray-200 { border-color: rgba(255, 255, 255, 0.2); }
+.dark .border-gray-300 { border-color: rgba(255, 255, 255, 0.3); }
+
+
+/* Styles de navigation */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.dark .glassmorphism {
+    background: rgba(39, 41, 61, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #6d28d9, #4f46e5);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+.nav-link.active {
+    color: #6d28d9; /* Active link color for light mode */
+}
+html.dark .nav-link.active {
+    color: #a78bfa; /* Active link color for dark mode */
+}
+
 
 /* Animations */
 .video-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .video-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
 .video-thumbnail { transition: transform 0.3s ease; }
 .video-card:hover .video-thumbnail { transform: scale(1.05); }
-.neon-button { position: relative; overflow: hidden; transition: all 0.3s ease; }
-.neon-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); transition: 0.5s; }
-.neon-button:hover::before { left: 100%; }
 
-/* Styles de navigation */
-.glassmorphism { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
-.nav-link { position: relative; transition: color 0.3s ease, background-color 0.3s ease; }
-.nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #6d28d9; transition: width 0.3s ease; }
-.nav-link.active { color: #6d28d9; }
-.nav-link.active::after { width: 60%; }
-html.dark .nav-link.active { color: #a78bfa; }
+/* Neon Button Style */
+.neon-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(109, 40, 217, 0.3);
+}
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+.neon-button:hover::before {
+    left: 100%;
+}
+.neon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(109, 40, 217, 0.5);
+}
+
+/* Form Card Styles (moved from recrutement.html) */
+.form-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+.dark .form-card {
+    background: rgba(39, 41, 61, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Progress Bar Styles (moved from recrutement.html) */
+.progress-bar {
+    background: linear-gradient(90deg, #6d28d9, #4f46e5);
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(109, 40, 217, 0.5);
+}
+
+/* Skill Card Styles (moved from recrutement.html) */
+.skill-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.skill-card.selected {
+    border-color: #6d28d9;
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(79, 70, 229, 0.1));
+    box-shadow: 0 0 20px rgba(109, 40, 217, 0.3);
+}
+.dark .skill-card {
+    background: rgba(39, 41, 61, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.dark .skill-card.selected {
+    border-color: #6d28d9;
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.2), rgba(79, 70, 229, 0.2));
+}
+
+/* Checkbox Styles (moved from recrutement.html) */
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6d28d9;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #6d28d9, #4f46e5);
+    border-color: #6d28d9;
+}
+input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.dark input[type="checkbox"] {
+    border-color: #9b59b6;
+}
+.dark input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #9b59b6, #6d28d9);
+    border-color: #9b59b6;
+}
+
+/* Input and Textarea Styles (moved from recrutement.html) */
+input, textarea {
+    transition: all 0.3s ease;
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+}
+.dark input, .dark textarea {
+    background: rgba(39, 41, 61, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+.dark input:focus, .dark textarea:focus {
+    border-color: #9b59b6;
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.2);
+}
+.dark input::placeholder, .dark textarea::placeholder {
+    color: rgba(224, 224, 224, 0.6);
+}
+
+/* Modal Styles (moved from recrutement.html) */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.dark .modal-content {
+    background: rgba(39, 41, 61, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Email Info Box Styles (moved from recrutement.html) */
+.email-info {
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(79, 70, 229, 0.1));
+    border: 1px solid rgba(109, 40, 217, 0.2);
+}
+.dark .email-info {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(109, 40, 217, 0.1));
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+/* Step Indicator Styles (moved from recrutement.html) */
+.step-indicator {
+    transition: all 0.3s ease;
+}
+.step-indicator.active {
+    background: linear-gradient(135deg, #6d28d9, #4f46e5);
+    color: white;
+    box-shadow: 0 0 15px rgba(109, 40, 217, 0.4);
+}
+.step-indicator.completed {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+/* Loading Animation (moved from recrutement.html) */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.loading {
+    animation: pulse 2s infinite;
+}
+
+.title-font { font-family: 'Orbitron', sans-serif; }
 
 /* Système de pages locales */
 .page { display: none; animation: fadeIn 0.5s; }
