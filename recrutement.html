@@ -1,284 +1,941 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recrutement - Azertix Crédits</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azertix - Recrutement</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#6d28d9',
-                        secondary: '#4f46e5'
-                    },
-                    borderRadius: {
-                        'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px',
-                        'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px'
-                    },
-                    fontFamily: { // Added font families for better control
-                        sans: ['Montserrat', 'sans-serif'],
-                        display: ['Orbitron', 'sans-serif'],
-                        handwriting: ['Pacifico', 'cursive']
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6d28d9",
+              secondary: "#4f46e5",
+              darkBg: "#1a1a2e",
+              darkCard: "#27293d",
+              darkText: "#e0e0e0",
+              lightTextDarker: "#333333",
+              accentLight: "#9b59b6",
+            },
+            fontFamily: {
+              sans: ["Montserrat"],
+              display: ["Orbitron"],
+              handwriting: ["Pacifico"],
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+            boxShadow: {
+              "custom-light":
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+              "custom-dark": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            },
+          },
+        },
+      };
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-    
-    <style>
-        /* Custom styles for glassmorphism effect */
-        .glassmorphism {
-            background-color: rgba(255, 255, 255, 0.5); /* White with transparency */
-            backdrop-filter: blur(10px); /* Blur effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
-        }
-        .dark .glassmorphism {
-            background-color: rgba(31, 41, 55, 0.5); /* Dark gray with transparency */
-            border: 1px solid rgba(75, 85, 99, 0.3); /* Darker border */
-        }
-        /* Active nav link styling */
-        .nav-link.active {
-            background-color: theme('colors.primary'); /* Use Tailwind primary color */
-            color: white;
-            box-shadow: theme('boxShadow.md');
-        }
-    </style>
-</head>
-<body class="bg-gray-50 dark:bg-gray-900 font-sans">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <!-- Link to external style.css for centralized styling -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
     <header class="sticky top-0 z-50">
-        <nav class="glassmorphism py-4 px-4 sm:px-6 flex items-center justify-between shadow-md">
-            <a href="index.html" class="flex items-center">
-                <img src="https://placehold.co/40x40/6d28d9/ffffff?text=AZ" alt="Logo Azertix" class="h-10 w-10 rounded-full object-cover">
+      <nav class="glassmorphism py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="#" class="flex items-center space-x-2">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center"
+              >
+                <span class="font-handwriting text-xl text-white font-bold"
+                  >AZ</span
+                >
+              </div>
+              <span class="font-handwriting text-2xl text-primary"
+                >Azertix</span
+              >
             </a>
-            
-            <div class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-gray-800/50 rounded-full px-2 py-1 shadow-sm border border-gray-100 dark:border-gray-700">
-                <a href="index.html" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Accueil</a>
-                <a href="index.html#all-credits-section" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Tous les Crédits</a>
-                <a href="index.html#missing-credits-section" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Crédits Manquants</a>
-                <a href="recrutement.html" class="nav-link active px-4 py-2 text-gray-700 font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Recrutement</a>
-            </div>
-            
-            <div class="flex items-center space-x-2">
-                <button id="theme-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white/100 dark:bg-white/10 dark:hover:bg-white/20 transition-colors">
-                    <i id="theme-icon" class="ri-moon-line text-gray-700 dark:text-gray-200"></i>
-                </button>
-                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white/100 dark:bg-white/10 dark:hover:bg-white/20 transition-colors">
-                    <i id="mobile-menu-icon" class="ri-menu-line text-gray-700 dark:text-gray-200"></i>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg">
-             <a href="index.html" class="block text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Accueil</a>
-            <a href="index.html#all-credits-section" class="block text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Tous les Crédits</a>
-            <a href="index.html#missing-credits-section" class="block text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Crédits Manquants</a>
-            <a href="recrutement.html" class="block text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Recrutement</a>
+          </div>
+          <div
+            class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-darkCard/50 rounded-full px-2 py-1 shadow-sm border border-white/20"
+          >
+            <a
+              href="#"
+              class="nav-link px-4 py-2 text-gray-700 dark:text-darkText font-medium rounded-full hover:bg-white/20 transition-colors"
+              >Accueil</a
+            >
+            <a
+              href="#"
+              class="nav-link px-4 py-2 text-gray-700 dark:text-darkText font-medium rounded-full hover:bg-white/20 transition-colors"
+              >Crédits</a
+            >
+            <a
+              href="#"
+              class="nav-link px-4 py-2 text-gray-700 dark:text-darkText font-medium rounded-full hover:bg-white/20 transition-colors"
+              >Manquants</a
+            >
+            <a
+              href="#"
+              class="nav-link active px-4 py-2 text-primary font-medium rounded-full hover:bg-white/20 transition-colors"
+              >Recrutement</a
+            >
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+            >
+              <i class="ri-search-line text-gray-700 dark:text-darkText"></i>
+            </button>
+            <button
+              id="theme-toggle"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+            >
+              <i class="ri-moon-line text-gray-700 dark:text-darkText"></i>
+            </button>
+          </div>
         </div>
+      </nav>
     </header>
-
-    <main>
-        <div class="container mx-auto px-4 sm:px-6 py-12">
-            <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8">
-                
-                <div class="text-center">
-                   <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Rejoindre l'équipe</h1>
-                   <p class="text-gray-600 dark:text-gray-300 mb-8">Envie de contribuer au développement du site ? Remplissez le formulaire ci-dessous pour nous faire part de vos motivations !</p>
-                </div>
-
-                <form id="recruitment-form" action="https://formspree.io/f/xnnvobnd" method="POST" class="space-y-6">
-                    
-                    <div>
-                        <label for="form-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom et Prénom *</label>
-                        <input type="text" id="form-name" name="name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Jean Dupont">
-                    </div>
-                    
-                    <div>
-                        <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email de contact *</label>
-                        <input type="email" id="form-contact-email" name="contact_email" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Pour que nous puissions vous répondre">
-                    </div>
-
-                    <div>
-                        <label for="form-age" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre âge *</label>
-                        <input type="number" id="form-age" name="age" required min="13" max="100" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: 16">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Vos compétences *</label>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">Nous recherchons un développeur pour le développement du site en HTML, CSS et JavaScript. Si vous connaiser autre chose precise le dans Vos motivations.</p>
-                        <!-- Checkboxes for skills removed as per request -->
-                    </div>
-
-                    <div>
-                        <label for="form-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Rôle souhaité *</label>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">Ce rôle n'est pas rémunéré.</p>
-                        <select id="form-role" name="desired_role" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option value="">Sélectionnez le rôle qui vous intéresse</option>
-                            <option value="frontend-dev">Développeur Front-end (HTML, CSS, JS)</option>
-                            <option value="other-role">Autre rôle</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="form-motivation" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Vos motivations *</label>
-                        <textarea id="form-motivation" name="motivation" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" rows="4" placeholder="Expliquez pourquoi vous souhaitez rejoindre le projet..."></textarea>
-                    </div>
-                    
-                    <div>
-                        <label for="form-portfolio" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Portfolio / GitHub (Optionnel)</label>
-                        <input type="url" id="form-portfolio" name="portfolio" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://github.com/votre-pseudo">
-                    </div>
-
-                    <div class="flex items-center">
-                        <input type="checkbox" id="privacy-consent" name="privacy_consent" required class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
-                        <label for="privacy-consent" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                            J'accepte que mes données soient utilisées pour le traitement de ma candidature. *
-                        </label>
-                    </div>
-
-                    <button type="submit" class="w-full bg-gradient-to-r from-secondary to-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all duration-200">
-                        Envoyer ma candidature
-                    </button>
-
-                    <div id="success-message" class="hidden mt-4 p-4 rounded-lg bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100 text-center">
-                        Votre candidature a été envoyée avec succès ! Redirection vers l'accueil...
-                    </div>
-                </form>
-            </div>
+    <main class="min-h-screen py-8">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-custom-light"
+          >
+            <i class="ri-team-line text-3xl text-white"></i>
+          </div>
+          <h1
+            class="font-display text-4xl font-bold text-gray-900 dark:text-darkText mb-4"
+          >
+            Rejoignez l'Équipe Azertix
+          </h1>
+          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Vous êtes passionné de gaming et souhaitez contribuer à nos
+            créations ? Postulez dès maintenant et rejoignez notre communauté de
+            créateurs talentueux.
+          </p>
         </div>
+        <div class="email-info rounded-lg p-6 mb-8 text-center">
+          <div class="flex items-center justify-center space-x-3">
+            <i class="ri-mail-line text-2xl text-primary"></i>
+            <div>
+              <p class="text-gray-700 dark:text-gray-300 font-medium">
+                Pour toute question concernant le recrutement
+              </p>
+              <a
+                href="mailto:ytazertix@gmail.com"
+                class="text-primary hover:text-secondary transition-colors font-semibold"
+                >ytazertix@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="form-card rounded-2xl p-8 max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center space-x-4">
+              <div
+                class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-primary text-primary active"
+              >
+                1
+              </div>
+              <div class="w-16 h-1 bg-gray-200 dark:bg-gray-600 rounded-full">
+                <div
+                  class="progress-bar h-full rounded-full"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <div
+                class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-gray-300 dark:border-gray-600 text-gray-400"
+              >
+                2
+              </div>
+              <div class="w-16 h-1 bg-gray-200 dark:bg-gray-600 rounded-full">
+                <div
+                  class="progress-bar h-full rounded-full"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <div
+                class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-gray-300 dark:border-gray-600 text-gray-400"
+              >
+                3
+              </div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              Étape <span id="current-step">1</span> sur 3
+            </div>
+          </div>
+          <form
+            id="recruitment-form"
+            action="https://formspree.io/f/xnnvobnd" <!-- Changed Formspree URL here -->
+            method="POST"
+          >
+            <div id="step-1" class="step-content">
+              <h2
+                class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-6"
+              >
+                Informations Personnelles
+              </h2>
+              <div class="space-y-6">
+                <div>
+                  <label
+                    for="fullName"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Nom Complet *</label
+                  >
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Adresse Email *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="age"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Âge *</label
+                  >
+                  <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="13"
+                    max="100"
+                    required
+                    class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="step-2" class="step-content hidden">
+              <h2
+                class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-6"
+              >
+                Vos Compétences
+              </h2>
+              <p class="text-gray-600 dark:text-gray-400 mb-6">
+                Sélectionnez toutes les compétences qui vous correspondent :
+              </p>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"
+              >
+                <div
+                  class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent"
+                  data-skill="dev-web"
+                >
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i class="ri-code-line text-xl text-white"></i>
+                  </div>
+                  <h3
+                    class="font-semibold text-gray-900 dark:text-darkText mb-2"
+                  >
+                    Développement Web
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    HTML, CSS, JavaScript, React
+                  </p>
+                </div>
+                <div
+                  class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent"
+                  data-skill="web-design"
+                >
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i class="ri-palette-line text-xl text-white"></i>
+                  </div>
+                  <h3
+                    class="font-semibold text-gray-900 dark:text-darkText mb-2"
+                  >
+                    Web Design
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    UI/UX, Figma, Adobe Creative
+                  </p>
+                </div>
+                <div
+                  class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent"
+                  data-skill="marketing"
+                >
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i class="ri-megaphone-line text-xl text-white"></i>
+                  </div>
+                  <h3
+                    class="font-semibold text-gray-900 dark:text-darkText mb-2"
+                  >
+                    Marketing Digital
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    SEO, SEM, Social Media
+                  </p>
+                </div>
+                <div
+                  class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent"
+                  data-skill="branding"
+                >
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i class="ri-award-line text-xl text-white"></i>
+                  </div>
+                  <h3
+                    class="font-semibold text-gray-900 dark:text-darkText mb-2"
+                  >
+                    Image de Marque
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Branding, Identité visuelle
+                  </p>
+                </div>
+                <div
+                  class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent"
+                  data-skill="optimization"
+                >
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i class="ri-speed-up-line text-xl text-white"></i>
+                  </div>
+                  <h3
+                    class="font-semibold text-gray-900 dark:text-darkText mb-2"
+                  >
+                    Optimisation
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Performance, Analytics
+                  </p>
+                </div>
+                <div
+                  class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent"
+                  data-skill="content"
+                >
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i class="ri-article-line text-xl text-white"></i>
+                  </div>
+                  <h3
+                    class="font-semibold text-gray-900 dark:text-darkText mb-2"
+                  >
+                    Création de Contenu
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Rédaction, Vidéo, Audio
+                  </p>
+                </div>
+              </div>
+              <div>
+                <label
+                  for="otherSkills"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >Autres compétences</label
+                >
+                <input
+                  type="text"
+                  id="otherSkills"
+                  name="otherSkills"
+                  placeholder="Décrivez vos autres compétences..."
+                  class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                />
+              </div>
+              <input type="hidden" id="selectedSkills" name="selectedSkills" />
+            </div>
+            <div id="step-3" class="step-content hidden">
+              <h2
+                class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-6"
+              >
+                Motivations et Liens
+              </h2>
+              <div class="space-y-6">
+                <div>
+                  <label
+                    for="motivation"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Pourquoi souhaitez-vous rejoindre l'équipe Azertix ?
+                    *</label
+                  >
+                  <textarea
+                    id="motivation"
+                    name="motivation"
+                    required
+                    rows="5"
+                    placeholder="Partagez vos motivations, vos idées et ce que vous pourriez apporter à l'équipe..."
+                    class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"
+                  ></textarea>
+                </div>
+                <div>
+                  <label
+                    for="github"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Lien GitHub (optionnel)</label
+                  >
+                  <input
+                    type="url"
+                    id="github"
+                    name="github"
+                    placeholder="https://github.com/votre-profil"
+                    class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="portfolio"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Lien Portfolio (optionnel)</label
+                  >
+                  <input
+                    type="url"
+                    id="portfolio"
+                    name="portfolio"
+                    placeholder="https://votre-portfolio.com"
+                    class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                  />
+                </div>
+                <div class="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    id="gdpr"
+                    name="gdpr"
+                    required
+                    class="mt-1"
+                  />
+                  <label
+                    for="gdpr"
+                    class="text-sm text-gray-700 dark:text-gray-300"
+                  >
+                    J'accepte que mes données personnelles soient traitées dans
+                    le cadre de cette candidature, conformément au RGPD. *
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-600"
+            >
+              <button
+                type="button"
+                id="prev-btn"
+                class="px-6 py-3 rounded-button border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors !rounded-button whitespace-nowrap hidden"
+              >
+                <i class="ri-arrow-left-line mr-2"></i>Précédent
+              </button>
+              <div class="flex space-x-4">
+                <button
+                  type="button"
+                  id="next-btn"
+                  class="neon-button bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
+                >
+                  Suivant<i class="ri-arrow-right-line ml-2"></i>
+                </button>
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="neon-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-button font-medium hover:from-primary/90 hover:to-secondary/90 transition-colors !rounded-button whitespace-nowrap hidden"
+                >
+                  <i class="ri-send-plane-line mr-2"></i>Envoyer ma Candidature
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
-
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 text-center sm:text-left">
-                <div>
-                    <a href="index.html" class="flex items-center justify-center sm:justify-start mb-6">
-                         <img src="https://placehold.co/48x48/6d28d9/ffffff?text=AZ" alt="Logo Azertix" class="h-12 w-12 rounded-full object-cover">
-                    </a>
-                    <p class="text-gray-400 mb-6">Tu retrouveras toutes les musiques que j'utilise ou les personnes qui participent à mes tournages.</p>
-                    <div class="flex space-x-4 justify-center sm:justify-start">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-youtube-fill text-white"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-twitter-x-fill text-white"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="title-font font-bold text-lg mb-6">Navigation</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
-                        <li><a href="index.html#all-credits-section" class="text-gray-400 hover:text-white transition-colors">Tous les Crédits</a></li>
-                        <li><a href="index.html#missing-credits-section" class="text-gray-400 hover:text-white transition-colors">Crédits Manquants</a></li>
-                        <li><a href="recrutement.html" class="text-gray-400 hover:text-white transition-colors">Recrutement</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="title-font font-bold text-lg mb-6">Catégories</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FPS</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Battle Royale</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="title-font font-bold text-lg mb-6">Contact</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center justify-center sm:justify-start"><i class="ri-mail-line text-primary mt-1 mr-3"></i><span class="text-gray-400">contact@azertix.com</span></li>
-                        <li class="flex items-center justify-center sm:justify-start"><i class="ri-discord-line text-primary mt-1 mr-3"></i><span class="text-gray-400">Serveur Discord</span></li>
-                    </ul>
-                </div>
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center space-x-2 mb-6">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center"
+              >
+                <span class="font-handwriting text-xl text-white font-bold"
+                  >AZ</span
+                >
+              </div>
+              <span class="font-handwriting text-2xl">Azertix</span>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500 text-sm">© 2025 Azertix Crédits. Tous droits réservés.</p>
+            <p class="text-gray-400 mb-6">
+              Créateur de contenu gaming passionné, partageant musiques et
+              contributeurs avec la communauté.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-youtube-fill text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill text-white"></i>
+              </a>
             </div>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg mb-6">Navigation</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Crédits</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Manquants</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Recrutement</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg mb-6">Catégories</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >FPS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Battle Royale</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg mb-6">Contact</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="ri-mail-line text-primary mt-1 mr-3"></i>
+                <span class="text-gray-400">contact@azertix.com</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-discord-line text-primary mt-1 mr-3"></i>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Discord</a
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="ri-youtube-line text-primary mt-1 mr-3"></i>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >YouTube</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm mb-4 md:mb-0">
+              © 2025 Azertix. Tous droits réservés.
+            </p>
+            <div class="flex space-x-6">
+              <button
+                onclick="showPrivacyModal()"
+                class="text-gray-500 text-sm hover:text-white transition-colors"
+              >
+                Politique de Confidentialité
+              </button>
+              <button
+                onclick="showTermsModal()"
+                class="text-gray-500 text-sm hover:text-white transition-colors font-medium"
+              >
+                Conditions d'Utilisation
+              </button>
+            </div>
+            <!-- Privacy Policy Modal -->
+            <div
+              id="privacy-modal"
+              class="fixed inset-0 flex items-center justify-center z-50 modal-overlay hidden"
+            >
+              <div
+                class="modal-content relative w-full max-w-2xl mx-auto rounded-lg p-8 shadow-lg transform transition-all sm:w-11/12"
+              >
+                <h2
+                  class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-4"
+                >
+                  Politique de Confidentialité
+                </h2>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-6 max-h-96 overflow-y-auto">
+                  Bienvenue sur le site web d'Azertix. Nous nous engageons à protéger votre vie privée et vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons les informations que vous nous fournissez lorsque vous utilisez notre site web, en particulier lors du processus de recrutement.
+                  <br><br>
+                  **1. Collecte des Informations**
+                  Nous collectons les informations suivantes lorsque vous postulez à un poste via notre formulaire de recrutement :
+                  * **Informations personnelles d'identification :** Nom complet, adresse email, âge.
+                  * **Informations sur les compétences :** Compétences sélectionnées via les cartes de compétences et toute autre compétence que vous décrivez.
+                  * **Informations sur les motivations et les liens :** Votre motivation à rejoindre Azertix, liens vers votre profil GitHub et votre portfolio (si fournis).
+                  <br><br>
+                  **2. Utilisation des Informations**
+                  Les informations collectées sont utilisées dans le seul but de :
+                  * Traiter votre candidature et évaluer votre adéquation avec les postes disponibles au sein d'Azertix.
+                  * Vous contacter concernant votre candidature.
+                  * Améliorer notre processus de recrutement.
+                  <br><br>
+                  **3. Partage des Informations**
+                  Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers. Vos données sont accessibles uniquement par les membres de l'équipe Azertix impliqués dans le processus de recrutement. Nous pouvons partager vos informations avec des prestataires de services tiers qui nous aident à exploiter notre site web et à mener nos activités (par exemple, Formspree pour la gestion des formulaires), à condition que ces parties acceptent de garder ces informations confidentielles.
+                  <br><br>
+                  **4. Protection des Données**
+                  Nous mettons en œuvre diverses mesures de sécurité pour maintenir la sûreté de vos informations personnelles lorsque you soumettez une candidature. Vos données sont stockées sur des serveurs sécurisés et sont protégées par des mesures techniques et organisationnelles appropriées.
+                  <br><br>
+                  **5. Vos Droits RGPD**
+                  Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants concernant vos données personnelles :
+                  * **Droit d'accès :** Vous avez le droit de demander une copie des informations que nous détenons à votre sujet.
+                  * **Droit de rectification :** Vous avez le droit de demander la correction de toute information que vous estimez inexacte ou incomplète.
+                  * **Droit à l'effacement (droit à l'oubli) :** Vous avez le droit de demander l'effacement de vos données personnelles, sous certaines conditions.
+                  * **Droit à la limitation du traitement :** Vous avez le droit de demander la limitation du traitement de vos données personnelles, sous certaines conditions.
+                  * **Droit à la portabilité des données :** Vous avez le droit de demander que nous transférions les données que nous avons collectées à une autre organisation, ou directement à vous, sous certaines conditions.
+                  * **Droit d'opposition :** Vous avez le droit de vous opposer à notre traitement de vos données personnelles, sous certaines conditions.
+                  <br><br>
+                  Pour exercer l'un de ces droits, veuillez nous contacter à l'adresse email fournie sur la page de recrutement.
+                  <br><br>
+                  **6. Consentement**
+                  En soumettant votre candidature via notre formulaire, vous consentez à notre politique de confidentialité et au traitement de vos données personnelles tel que décrit dans la présente politique.
+                  <br><br>
+                  **7. Modifications de la Politique de Confidentialité**
+                  Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page. Il est de votre responsabilité de consulter régulièrement cette politique pour prendre connaissance des mises à jour.
+                  <br><br>
+                  **8. Contact**
+                  Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques en matière de données, veuillez nous contacter à : ytazertix@gmail.com
+                </p>
+                <button
+                  onclick="hidePrivacyModal()"
+                  class="mt-6 px-6 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors neon-button"
+                >
+                  Fermer
+                </button>
+              </div>
+            </div>
+
+            <!-- Terms of Use Modal -->
+            <div
+              id="terms-modal"
+              class="fixed inset-0 flex items-center justify-center z-50 modal-overlay hidden"
+            >
+              <div
+                class="modal-content relative w-full max-w-2xl mx-auto rounded-lg p-8 shadow-lg transform transition-all sm:w-11/12"
+              >
+                <h2
+                  class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-4"
+                >
+                  Conditions d'Utilisation
+                </h2>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-6 max-h-96 overflow-y-auto">
+                  Bienvenue sur le site web d'Azertix. En accédant à ce site et en utilisant nos services, vous acceptez de vous conformer aux conditions d'utilisation suivantes. Veuillez les lire attentivement.
+                  <br><br>
+                  **1. Acceptation des Conditions**
+                  En utilisant ce site web, vous reconnaissez avoir lu, compris et accepté d'être lié par ces conditions d'utilisation, ainsi que par notre politique de confidentialité. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser notre site web.
+                  <br><br>
+                  **2. Utilisation du Site**
+                  Le contenu de ce site web est fourni à titre informatif et pour le recrutement. Vous acceptez d'utiliser le site de manière légale et éthique, sans enfreindre les droits de tiers ou restreindre l'utilisation du site par d'autres.
+                  <br><br>
+                  **3. Propriété Intellectuelle**
+                  Tous les contenus présents sur ce site, y compris les textes, graphiques, logos, icônes, images, clips audio, téléchargements numériques, compilations de données et logiciels, sont la propriété d'Azertix ou de ses fournisseurs de contenu et sont protégés par les lois internationales sur le droit d'auteur.
+                  <br><br>
+                  **4. Comptes Utilisateurs**
+                  Si le site propose des fonctionnalités nécessitant un compte utilisateur, vous êtes responsable du maintien de la confidentialité de vos informations de compte et de votre mot de passe, et de la restriction de l'accès à votre ordinateur. Vous acceptez d'accepter la responsabilité de toutes les activités qui se produisent sous votre compte ou mot de passe.
+                  <br><br>
+                  **5. Liens vers des Sites Tiers**
+                  Notre site web peut contenir des liens vers des sites web de tiers qui ne sont pas détenus ou contrôlés par Azertix. Nous n'avons aucun contrôle et n'assumons aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques de tout site web de tiers.
+                  <br><br>
+                  **6. Limitation de Responsabilité**
+                  Azertix ne sera pas responsable des dommages directs, indirects, accessoires, spéciaux, consécutifs ou exemplaires, y compris, mais sans s'y limiter, les dommages pour perte de profits, de clientèle, d'utilisation, de données ou d'autres pertes intangibles résultant de l'utilisation ou de l'incapacité d'utiliser le site.
+                  <br><br>
+                  **7. Modifications des Conditions**
+                  Azertix se réserve le droit de modifier ces conditions d'utilisation à tout moment. Toute modification sera effective dès sa publication sur cette page. Votre utilisation continue du site après la publication de modifications constitue votre acceptation de ces modifications.
+                  <br><br>
+                  **8. Droit Applicable**
+                  Ces conditions d'utilisation sont régies et interprétées conformément aux lois de la France, sans égard à ses dispositions en matière de conflit de lois.
+                  <br><br>
+                  **9. Contact**
+                  Pour toute question concernant ces conditions d'utilisation, veuillez nous contacter à : ytazertix@gmail.com
+                </p>
+                <button
+                  onclick="hideTermsModal()"
+                  class="mt-6 px-6 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors neon-button"
+                >
+                  Fermer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
 
-            mobileMenuBtn.addEventListener('click', () => {
-                const isHidden = mobileMenu.classList.toggle('hidden');
-                mobileMenuIcon.classList.toggle('ri-menu-line', isHidden);
-                mobileMenuIcon.classList.toggle('ri-close-line', !isHidden);
-            });
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        themeToggle.querySelector('i').classList.replace('ri-moon-line', 'ri-sun-line');
+      } else {
+        themeToggle.querySelector('i').classList.replace('ri-sun-line', 'ri-moon-line');
+      }
 
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            const applyTheme = (theme) => {
-                if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    themeIcon.classList.replace('ri-moon-line', 'ri-sun-line');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    themeIcon.classList.replace('ri-sun-line', 'ri-moon-line');
-                }
-            };
-            
-            themeToggle.addEventListener('click', () => {
-                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-                localStorage.setItem('theme', newTheme);
-                applyTheme(newTheme);
-            });
-            
-            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            applyTheme(savedTheme);
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        if (body.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+          themeToggle.querySelector('i').classList.replace('ri-moon-line', 'ri-sun-line');
+        } else {
+          localStorage.setItem('theme', 'light');
+          themeToggle.querySelector('i').classList.replace('ri-sun-line', 'ri-moon-line');
+        }
+      });
 
-            // Form submission handling
-            const recruitmentForm = document.getElementById('recruitment-form');
-            const successMessage = document.getElementById('success-message');
+      // Multi-Step Form Logic
+      let currentStep = 1;
+      const totalSteps = 3;
+      const stepContents = [
+        document.getElementById('step-1'),
+        document.getElementById('step-2'),
+        document.getElementById('step-3'),
+      ];
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const submitBtn = document.getElementById('submit-btn');
+      const currentStepSpan = document.getElementById('current-step');
+      const progressBar = document.querySelector('.progress-bar');
+      const stepIndicators = document.querySelectorAll('.step-indicator');
+      const skillCards = document.querySelectorAll('.skill-card');
+      const selectedSkillsInput = document.getElementById('selectedSkills');
 
-            recruitmentForm.addEventListener('submit', async (event) => {
-                event.preventDefault(); // Prevent default form submission
+      // Function to update selected skills in hidden input
+      function updateSelectedSkills() {
+        const selected = Array.from(skillCards)
+          .filter(card => card.classList.contains('selected'))
+          .map(card => card.dataset.skill);
+        selectedSkillsInput.value = selected.join(',');
+      }
 
-                // You would typically send the form data to Formspree or your backend here
-                // Gestion de la soumission du formulaire
-            const recruitmentForm = document.getElementById('recruitment-form');
-            const successMessage = document.getElementById('success-message');
+      // Add event listeners to skill cards
+      skillCards.forEach(card => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('selected');
+          updateSelectedSkills();
+        });
+      });
 
-            recruitmentForm.addEventListener('submit', async (event) => {
-                event.preventDefault(); // Empêche la soumission par défaut du formulaire pour la gérer avec fetch
+      function validateStep(step) {
+        let isValid = true;
+        if (step === 1) {
+          const fullName = document.getElementById('fullName');
+          const email = document.getElementById('email');
+          const age = document.getElementById('age');
 
-                const form = event.target;
-                const formData = new FormData(form); // Crée un objet FormData à partir des champs du formulaire
-                const formUrl = form.action; // Récupère l'URL d'action du formulaire (Formspree dans ce cas)
+          if (!fullName.value.trim()) {
+            fullName.classList.add('border-red-500');
+            isValid = false;
+          } else {
+            fullName.classList.remove('border-red-500');
+          }
 
-                try {
-                    // Envoie les données du formulaire à l'URL d'action
-                    const response = await fetch(formUrl, {
-                        method: form.method, // Utilise la méthode POST spécifiée dans le formulaire HTML
-                        body: formData, // Les données du formulaire
-                        headers: {
-                            'Accept': 'application/json' // Indique à Formspree que nous attendons une réponse JSON
-                        }
-                    });
+          if (!email.value.trim() || !email.value.includes('@')) {
+            email.classList.add('border-red-500');
+            isValid = false;
+          } else {
+            email.classList.remove('border-red-500');
+          }
 
-                    if (response.ok) { // Vérifie si la requête a réussi (code statut 2xx)
-                        successMessage.classList.remove('hidden'); // Affiche le message de succès
-                        // Redirection vers la page d'accueil après 3 secondes
-                        setTimeout(() => {
-                            window.location.href = 'index.html'; 
-                        }, 3000); // 3000 millisecondes = 3 secondes
-                    } else {
-                        // Gère les erreurs provenant de Formspree ou de votre backend
-                        const errorData = await response.json(); // Tente de lire le corps de la réponse comme JSON
-                        console.error('Échec de la soumission du formulaire :', response.status, errorData);
-                        alert('Une erreur est survenue lors de l\'envoi de votre candidature. Veuillez réessayer.');
-                    }
-                } catch (error) {
-                    // Gère les erreurs de réseau (ex: pas de connexion internet)
-                    console.error('Erreur de réseau ou de soumission :', error);
-                    alert('Une erreur de connexion est survenue. Veuillez vérifier votre connexion internet et réessayer.');
-                }
-            });
+          if (!age.value || parseInt(age.value) < 13 || parseInt(age.value) > 100) {
+            age.classList.add('border-red-500');
+            isValid = false;
+          } else {
+            age.classList.remove('border-red-500');
+          }
+        } else if (step === 3) {
+          const motivation = document.getElementById('motivation');
+          const gdpr = document.getElementById('gdpr');
+
+          if (!motivation.value.trim()) {
+            motivation.classList.add('border-red-500');
+            isValid = false;
+          } else {
+            motivation.classList.remove('border-red-500');
+          }
+
+          if (!gdpr.checked) {
+            gdpr.classList.add('border-red-500'); // Add visual cue for unchecked checkbox
+            isValid = false;
+          } else {
+            gdpr.classList.remove('border-red-500');
+          }
+        }
+        return isValid;
+      }
+
+      function showStep(stepNum) {
+        // Hide all step contents
+        stepContents.forEach((stepContent) => {
+          stepContent.classList.add('hidden');
+        });
+
+        // Show the current step content
+        stepContents[stepNum - 1].classList.remove('hidden');
+
+        // Update step indicators
+        stepIndicators.forEach((indicator, index) => {
+          indicator.classList.remove('active', 'completed');
+          indicator.classList.remove('border-primary', 'text-primary');
+          indicator.classList.add('border-gray-300', 'dark:border-gray-600', 'text-gray-400');
+
+          if (index + 1 < stepNum) {
+            indicator.classList.add('completed');
+            indicator.classList.remove('border-gray-300', 'dark:border-gray-600', 'text-gray-400');
+          } else if (index + 1 === stepNum) {
+            indicator.classList.add('active');
+            indicator.classList.remove('border-gray-300', 'dark:border-gray-600', 'text-gray-400');
+            indicator.classList.add('border-primary', 'text-primary');
+          }
+        });
+
+        // Update progress bar
+        const progress = ((stepNum - 1) / (totalSteps -1)) * 100;
+        progressBar.style.width = `${progress}%`;
+
+        // Update step number text
+        currentStepSpan.textContent = stepNum;
+
+        // Manage button visibility
+        if (stepNum === 1) {
+          prevBtn.classList.add('hidden');
+          nextBtn.classList.remove('hidden');
+          submitBtn.classList.add('hidden');
+        } else if (stepNum === totalSteps) {
+          prevBtn.classList.remove('hidden');
+          nextBtn.classList.add('hidden');
+          submitBtn.classList.remove('hidden');
+        } else {
+          prevBtn.classList.remove('hidden');
+          nextBtn.classList.remove('hidden');
+          submitBtn.classList.add('hidden');
+        }
+      }
+
+      nextBtn.addEventListener('click', () => {
+        if (validateStep(currentStep)) {
+          if (currentStep < totalSteps) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+
+      // Initial display
+      showStep(currentStep);
+
+      // Modal Functions
+      function showPrivacyModal() {
+        document.getElementById('privacy-modal').classList.remove('hidden');
+      }
+
+      function hidePrivacyModal() {
+        document.getElementById('privacy-modal').classList.add('hidden');
+      }
+
+      function showTermsModal() {
+        document.getElementById('terms-modal').classList.remove('hidden');
+      }
+
+      function hideTermsModal() {
+        document.getElementById('terms-modal').classList.add('hidden');
+      }
+
+      // Add event listener to the form for submission
+      const recruitmentForm = document.getElementById('recruitment-form');
+      recruitmentForm.addEventListener('submit', (event) => {
+        // Final validation before submission
+        if (!validateStep(currentStep)) {
+          event.preventDefault(); // Prevent form submission if validation fails
+          // Optionally, scroll to the first invalid field or show a general error message
+        } else {
+          // You can add a loading indicator here if needed
+          submitBtn.innerHTML = '<i class="ri-loader-4-line animate-spin mr-2"></i>Envoi...';
+          submitBtn.disabled = true;
+        }
+      });
+
     </script>
-
-</body>
+  </body>
 </html>
