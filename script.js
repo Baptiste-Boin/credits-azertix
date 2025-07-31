@@ -34,7 +34,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         duration: '2:27',
         date: '25 juillet 2025',
         views: '26 vues',
-        description: '🎮 Aujourd’hui, place à un Best Of Kills sur Black Ops 6 💣',
+        description: '🎮 Aujourd’hui, petit Best Of Kills sur Black Ops 6 💣',
         youtubeLink: 'https://youtu.be/VomI7-rLtPE',
         credits: {
             Musique: [
@@ -48,70 +48,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
             ]
         }
     },
-    {
-        id: 'fortnite-skins',
-        title: 'Top 10 Skins Fortnite que Vous Devez Absolument Avoir',
-        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520Fortnite%2520battle%2520royale%2520action%2C%2520character%2520with%2520cool%2520skin%2520in%2520dynamic%2520pose%2C%2520vibrant%2520colors%2C%2520high%2520quality%2520digital%2520art%2520with%2520action%2520composition%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520look&width=640&height=360&seq=vid3&orientation=landscape',
-        duration: '15:42',
-        date: '18 juin 2025',
-        views: '312K vues',
-        description: 'Découvrez les skins les plus rares et les plus stylés disponibles actuellement sur Fortnite.',
-        youtubeLink: '#',
-        credits: {
-            Recherche: [{ name: 'SkinBase', by: 'Données sur la rareté' }]
-        }
-    },
-    {
-        id: 'rematch-decouverte',
-        title: 'Rematch - Découverte du jeux (il est trop bien)',
-        thumbnail: 'https://i9.ytimg.com/vi_webp/9Q5nOQizCbk/mqdefault.webp?v=68558af1&sqp=CPzLn8QG&rs=AOn4CLCUUDtIwWkb1ThYoBDSIN9AaA9Qkw',
-        duration: '22:37',
-        date: '21 juin 2025',
-        views: '356 vues',
-        description: '',
-        youtubeLink: '#',
-        credits: {
-            Shaders: [{ name: 'BSL Shaders', by: 'capttatsu' }],
-            'Packs de Textures': [{ name: 'Faithful 32x', by: 'Faithful Team' }],
-            Constructeurs: [
-                { name: 'BuilderPro', by: 'Design' },
-                { name: 'RedstoneMaster', by: 'Systèmes' }
-            ]
-        }
-    },
-    {
-        id: 'lol-guide',
-        title: 'Guide Complet du Nouveau Champion League of Legends',
-        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520League%2520of%2520Legends%2520champion%2520in%2520battle%2C%2520epic%2520ability%2520effects%2C%2520dramatic%2520lighting%2C%2520high%2520quality%2520digital%2520art%2520with%2520vibrant%2520colors%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520composition&width=640&height=360&seq=vid4&orientation=landscape',
-        duration: '20:15',
-        date: '15 juin 2025',
-        views: '178K vues',
-        description: 'Maîtrisez toutes les compétences et combos du dernier champion ajouté au jeu.',
-        youtubeLink: '#',
-        credits: {}
-    },
-    {
-        id: 'cod-meta',
-        title: 'Les Meilleures Armes de Call of Duty: Warzone 2025',
-        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520Call%2520of%2520Duty%2520action%2520scene%2C%2520soldier%2520with%2520weapon%2C%2520explosion%2520effects%2C%2520dramatic%2520lighting%2C%2520high%2520quality%2520digital%2520art%2520with%2520intense%2520composition%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520look&width=640&height=360&seq=vid5&orientation=landscape',
-        duration: '25:08',
-        date: '10 juin 2025',
-        views: '295K vues',
-        description: 'Analyse complète du meta actuel et des meilleures configurations d\'armes pour dominer.',
-        youtubeLink: '#',
-        credits: {}
-    },
-    {
-        id: 'among-us-strats',
-        title: 'Among Us: Les Stratégies Secrètes d\'Imposteur',
-        thumbnail: 'https://readdy.ai/api/search-image?query=gaming%2520thumbnail%2520showing%2520Among%2520Us%2520characters%2520in%2520funny%2520situation%2C%2520colorful%2520style%2C%2520impostor%2520reveal%2C%2520high%2520quality%2520digital%2520art%2520with%2520humorous%2520composition%2C%2520perfect%2520for%2520a%2520YouTube%2520gaming%2520video%2C%2520professional%2520look&width=640&height=360&seq=vid6&orientation=landscape',
-        duration: '17:33',
-        date: '05 juin 2025',
-        views: '221K vues',
-        description: 'Apprenez à tromper vos amis comme un pro avec ces techniques d\'impostor avancées.',
-        youtubeLink: '#',
-        credits: {}
-    }
+    
 ];
 
 
