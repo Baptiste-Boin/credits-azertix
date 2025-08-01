@@ -14,7 +14,7 @@ const videoDatabase = [
         description: `🎮 Bienvenue à Lake Arbor sur Cities Skylines 2 !
 
 Pour ce deuxième épisode, nous allons installer la première zone industrielle et installer de nouveaux commerces et maisons.`,
-        youtubeLink: 'https://youtu.be/',
+        youtubeLink: 'https://youtu.be/SL9HpAP-iAg',
         credits: {
             Musique: [
                 { name: 'I Only Know Never (Instrumental Version)', by: 'Zorro' },
