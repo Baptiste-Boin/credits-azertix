@@ -7,7 +7,7 @@ const videoDatabase = [
         id: 'Cities Skylines 2 #2',
         title: 'Cities Skylines 2 - Première zone industrielle a Lake Arbor #2',
         // Updated thumbnail path from .png to .jpg
-        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.jpg',  
+        thumbnail: 'citiesskylines2#2.png',  
         duration: '18:28',
         date: '01 Aout 2025',
         views: '0 vues',
