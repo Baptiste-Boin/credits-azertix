@@ -31,7 +31,7 @@ Pour ce deuxième épisode, nous allons installer la première zone industrielle
         id: 'Cities Skylines 2 #1',
         title: 'Cities Skylines 2 - Bienvenue à Lake Arbor #1',
         // Updated thumbnail path from .png to .jpg
-        thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.jpg', 
+        thumbnail: 'citiesskylines2miniature#1.png', 
         duration: '20:52',
         date: '28 Juillet 2025',
         views: '41 vues',
