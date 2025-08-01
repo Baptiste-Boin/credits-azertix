@@ -34,7 +34,7 @@ Pour ce deuxième épisode, nous allons installer la première zone industrielle
         thumbnail: 'https://raw.githubusercontent.com/Baptiste-Boin/credits-azertix/main/cities%20skylines%202%20miniature%20%231.jpg', 
         duration: '20:52',
         date: '28 Juillet 2025',
-        views: '13 vues',
+        views: '41 vues',
         description: `🎮 Bienvenue à Lake Arbor sur Cities Skylines 2 !
 
 Aujourd’hui on démarre une toute nouvelle aventure urbaine avec Lake Arbor. Une ville que nous allons construire de A à Z dans Cities Skylines 2 🌆
@@ -59,7 +59,7 @@ Pour ce premier épisode, nous allons mettre en place le train et la première z
         thumbnail: 'blackops6bestofkill1.png',
         duration: '2:27',
         date: '25 Juillet 2025',
-        views: '26 vues',
+        views: '28 vues',
         description: '🎮 Aujourd’hui, petit Best Of Kills sur Black Ops 6 💣',
         youtubeLink: 'https://youtu.be/VomI7-rLtPE',
         credits: {
