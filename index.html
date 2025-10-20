@@ -1,341 +1,611 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azertix - Crédits YouTube</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#6d28d9',
-                        secondary: '#4f46e5'
-                    },
-                    borderRadius: {
-                        'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px',
-                        'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px'
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azertix – Crédits & Recrutement</title>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    
+  <!-- Tailwind (one version) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#6d28d9",
+            secondary: "#4f46e5",
+            darkBg: "#1a1a2e",
+            darkCard: "#27293d",
+            darkText: "#e0e0e0",
+            lightTextDarker: "#333333",
+            accentLight: "#9b59b6",
+          },
+          fontFamily: {
+            sans: ["Montserrat"],
+            display: ["Orbitron"],
+            handwriting: ["Pacifico"],
+          },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+          boxShadow: {
+            "custom-light":
+              "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)",
+            "custom-dark": "0 25px 50px -12px rgba(0,0,0,0.25)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+
+  <!-- Optional external stylesheet hook (kept for your own overrides) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Cloudflare Turnstile (for both forms) -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <style>
+    /* Small shared utility for glass effect */
+    .glassmorphism { backdrop-filter: saturate(180%) blur(8px); background: rgba(255,255,255,0.7); }
+    .dark .glassmorphism { background: rgba(17,24,39,0.7); }
+    .page { display: none; }
+    .page.active { display: block; }
+    .title-font { font-family: var(--tw-font-display, Orbitron), ui-sans-serif, system-ui; }
+    .font-handwriting { font-family: var(--tw-font-handwriting, Pacifico), cursive; }
+    .neon-button { transition: transform .15s ease, box-shadow .2s ease; }
+    .neon-button:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(109,40,217,.25); }
+    .skill-card.active { border-color: #6d28d9; box-shadow: 0 0 0 4px rgba(109,40,217,0.12); }
+    .email-info { background: linear-gradient(135deg, rgba(109,40,217,0.08), rgba(79,70,229,0.08)); }
+    .form-card { background: white; }
+    .dark .form-card { background: var(--tw-color-darkCard, #27293d); }
+  </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-darkText font-sans">
 
-    <header class="sticky top-0 z-50">
-        <nav class="glassmorphism py-4 px-4 sm:px-6 flex items-center justify-between shadow-md">
-            <a href="index.html" data-page="home" class="page-link flex items-center">
-                <img src="profil.png" alt="Logo Azertix" class="h-10 w-10 rounded-full object-cover">
-            </a>
-            
-            <div class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-gray-800/50 rounded-full px-2 py-1 shadow-sm border border-gray-100 dark:border-gray-700">
-                <a href="" data-page="home" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Accueil</a>
-                <a href="" data-page="all-credits" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Tous les Crédits</a>
-                <a href="" data-page="missing-credits" class="nav-link page-link px-4 py-2 text-gray-700 font-medium rounded-full">Crédits Manquants</a>
-                <a href="recrutement.html" class="nav-link px-4 py-2 text-gray-700 font-medium rounded-full">Recrutement</a>
+  <!-- Header / Navigation (shared) -->
+  <header class="sticky top-0 z-50">
+    <nav class="glassmorphism py-4 px-4 sm:px-6 shadow-md">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="#" data-page="home" class="page-link flex items-center">
+          <img src="profil.png" alt="Logo Azertix" class="h-10 w-10 rounded-full object-cover" />
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center space-x-1 bg-white/50 dark:bg-gray-800/50 rounded-full px-2 py-1 shadow-sm border border-gray-100 dark:border-gray-700">
+          <a href="#" data-page="home" class="nav-link page-link px-4 py-2 text-gray-700 dark:text-gray-200 font-medium rounded-full">Accueil</a>
+          <a href="#" data-page="all-credits" class="nav-link page-link px-4 py-2 text-gray-700 dark:text-gray-200 font-medium rounded-full">Tous les Crédits</a>
+          <a href="#" data-page="missing-credits" class="nav-link page-link px-4 py-2 text-gray-700 dark:text-gray-200 font-medium rounded-full">Crédits Manquants</a>
+          <a href="#" data-page="recrutement" class="nav-link page-link px-4 py-2 text-gray-700 dark:text-gray-200 font-medium rounded-full">Recrutement</a>
+        </div>
+
+        <!-- Right actions -->
+        <div class="flex items-center space-x-2">
+          <button id="theme-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white/100 dark:bg-white/10 dark:hover:bg-white/20 transition-colors" title="Basculer thème">
+            <i id="theme-icon" class="ri-moon-line text-gray-700 dark:text-gray-200"></i>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white/100 dark:bg-white/10 dark:hover:bg-white/20 transition-colors" aria-label="Menu">
+            <i id="mobile-menu-icon" class="ri-menu-line text-gray-700 dark:text-gray-200"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg">
+      <a href="#" data-page="home" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Accueil</a>
+      <a href="#" data-page="all-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Tous les Crédits</a>
+      <a href="#" data-page="missing-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Crédits Manquants</a>
+      <a href="#" data-page="recrutement" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Recrutement</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <div id="page-home" class="page active">
+      <section class="hero-section py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+            <img src="profil.png" alt="Profil Azertix" class="w-24 h-24 rounded-full object-cover mb-6 shadow-lg" />
+            <h1 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Crédits des Vidéos d'Azertix</h1>
+            <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8">Découvrez toutes mes ressources et les personnes qui ont participé à mes créations.</p>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+              <a href="#derniers-credits-anchor" class="neon-button bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Derniers Crédits</a>
+              <a href="#" data-page="recrutement" class="page-link neon-button bg-gradient-to-r from-secondary to-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Participer au projet</a>
+              <a href="#" data-page="missing-credits" class="page-link neon-button bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Signaler un Crédit Manquant</a>
             </div>
-            
-            <div class="flex items-center space-x-2">
-                <button id="theme-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white/100 dark:bg-white/10 dark:hover:bg-white/20 transition-colors">
-                    <i id="theme-icon" class="ri-moon-line text-gray-700 dark:text-gray-200"></i>
-                </button>
-                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/60 hover:bg-white/100 dark:bg-white/10 dark:hover:bg-white/20 transition-colors">
-                    <i id="mobile-menu-icon" class="ri-menu-line text-gray-700 dark:text-gray-200"></i>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg">
-            <a href="#" data-page="home" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Accueil</a>
-            <a href="#" data-page="all-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Tous les Crédits</a>
-            <a href="#" data-page="missing-credits" class="block page-link text-center py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">Crédits Manquants</a>
-            
-        </div>
-    </header>
-
-    <main>
-        <div id="page-home" class="page active">
-            <section class="hero-section py-16">
-                <div class="container mx-auto px-4 sm:px-6">
-                    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
-                        <img src="profil.png" alt="Profil Azertix" class="w-24 h-24 rounded-full object-cover mb-6 shadow-lg">
-                        <h1 class="title-font text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Crédits des Vidéos d'Azertix</h1>
-                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8">Découvrez toutes mes ressources et personnes qui ont participer a mes créations.</p>
-                        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
-                            <a href="#derniers-credits-anchor" class="neon-button bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Derniers Crédits</a>
-                            <a href="recrutement.html" class="neon-button bg-gradient-to-r from-secondary to-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Participer au projet</a>
-                            <a href="#" data-page="missing-credits" class="page-link neon-button bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Signaler un Crédit Manquant</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="derniers-credits-anchor" class="py-16 bg-white dark:bg-gray-800">
-                <div class="container mx-auto px-4 sm:px-6">
-                    <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-                        <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Derniers Crédits</h2>
-                        <a href="#" data-page="all-credits" class="page-link text-primary dark:text-indigo-400 font-medium flex items-center hover:underline">
-                            Voir tout <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                    <div id="home-videos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-                </div>
-            </section>
-
-            <section class="py-16 bg-white dark:bg-gray-800">
-                <div class="container mx-auto px-4 sm:px-6">
-                    <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Parcourir par Catégorie</h2>
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                        <div class="bg-gradient-to-br from-primary/10 to-primary/20 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-gamepad-line text-primary text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">FPS</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Call of Duty: Black Ops 6</p></div>
-                        <div class="bg-gradient-to-br from-secondary/10 to-secondary/20 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-sword-line text-secondary text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">Battle Royale</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Warzone</p></div>
-                        <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer"><div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-200 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-building-4-line text-purple-500 text-2xl"></i></div><h3 class="title-font font-bold text-base sm:text-lg mb-2">Build</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Minecraft</p></div>
-                    </div>
-                </div>
-            </section>
-
-            
-        </div>
-
-        <div id="page-all-credits" class="page">
-            <section class="py-16">
-                <div class="container mx-auto px-4 sm:px-6">
-                    <h1 class="title-font text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-900 dark:text-white">Toutes les Vidéos</h1>
-                    <div id="all-videos-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
-                </div>
-            </section>
-        </div>
-
-        <div id="page-details" class="page">
-             <div class="container mx-auto px-4 sm:px-6 py-12">
-                <div class="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
-                    <div class="md:flex">
-                        <div class="md:w-2/5 flex-shrink-0">
-                            <img id="detail-thumbnail" class="h-48 md:h-full w-full object-cover" src="" alt="">
-                        </div>
-                        <div class="p-6 md:p-8 flex flex-col justify-center">
-                            <h1 id="detail-title" class="title-font text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white"></h1>
-                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 my-4">
-                                <span id="detail-date"></span><span class="mx-2">•</span><span id="detail-views"></span>
-                            </div>
-                            <p id="detail-description" class="text-gray-700 dark:text-gray-300 mb-6"></p>
-                            <a id="detail-youtube-link" href="#" target="_blank" class="mt-auto neon-button bg-red-600 text-white px-6 py-3 rounded-button font-bold flex items-center justify-center space-x-2 hover:bg-red-700 transition-colors w-full">
-                                <i class="ri-youtube-fill text-xl sm:text-2xl"></i><span>Voir sur YouTube</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div id="detail-credits-container" class="max-w-5xl mx-auto mt-2 p-4 md:p-8"></div>
-            </div>
-        </div>
-
-        <div id="page-missing-credits" class="page">
-            <div class="container mx-auto px-4 sm:px-6 py-12">
-                <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8">
-                    
-                    <div class="text-center">
-                       <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Signaler un Crédit Manquant</h1>
-                       <p class="text-gray-600 dark:text-gray-300 mb-8">Aide-nous à maintenir des informations de crédit précises en remplissant tous les champs.</p>
-                    </div>
-
-                    <form id="missing-credit-form" action="https://formspree.io/f/xnnvobnd" method="POST" class="space-y-6">
-                        
-                        <div>
-                            <label for="form-video-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">URL de la vidéo *</label>
-                            <input type="url" id="form-video-url" name="video_url" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://youtube.com/watch?v=...">
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="form-first-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Prénom de la personne à créditer *</label>
-                                <input type="text" id="form-first-name" name="first_name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Jean">
-                            </div>
-                            <div>
-                                <label for="form-last-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom de la personne à créditer *</label>
-                                <input type="text" id="form-last-name" name="last_name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Dupont">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="form-project-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Son rôle dans le projet *</label>
-                            <textarea id="form-project-role" name="project_role" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" rows="4" placeholder="Décrivez sa contribution. Ex: Monteur vidéo, compositeur..."></textarea>
-                        </div>
-                        
-                        <div>
-                            <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email de contact *</label>
-                            <input type="email" id="form-contact-email" name="contact_email" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Pour que nous puissions vous répondre">
-                        </div>
-
-                        <div>
-                            <label for="form-credit-details" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Détails supplémentaires (Optionnel)</label>
-                            <textarea id="form-credit-details" name="additional_details" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" rows="3" placeholder="Toute autre information utile..."></textarea>
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="cf-turnstile"
-                             data-sitekey="0x4AAAAAABncIYMGywxVnwLT"
-                             data-theme="auto">
-                            </div>
-                         </div>
-
-                        <button type="submit" id="submit-missing-credit-btn" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:bg-primary/90 transition-all duration-200">
-                            Soumettre le rapport
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
-
-  <footer class="bg-gray-900 text-white pt-16 pb-8 mt-16">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-      <div>
-        <div class="flex items-center space-x-2 mb-6">
-          <div
-            class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center overflow-hidden"
-          >
-            <img src="profil.png" alt="Profil" class="w-full h-full object-cover" />
           </div>
-          <span class="font-handwriting text-2xl">Azertix</span>
         </div>
-            <p class="text-gray-400 mb-6">
-              Tu retrouvera toute les musique que j'utilise ou les personnes qui participe a mes tournages.
+      </section>
+
+      <section id="derniers-credits-anchor" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+            <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Derniers Crédits</h2>
+            <a href="#" data-page="all-credits" class="page-link text-primary dark:text-indigo-400 font-medium flex items-center hover:underline">Voir tout <i class="ri-arrow-right-line ml-1"></i></a>
+          </div>
+          <div id="home-videos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+          <h2 class="title-font text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Parcourir par Catégorie</h2>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="bg-gradient-to-br from-primary/10 to-primary/20 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-gamepad-line text-primary text-2xl"></i></div>
+              <h3 class="title-font font-bold text-base sm:text-lg mb-2">FPS</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Call of Duty: Black Ops 6</p>
+            </div>
+            <div class="bg-gradient-to-br from-secondary/10 to-secondary/20 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-sword-line text-secondary text-2xl"></i></div>
+              <h3 class="title-font font-bold text-base sm:text-lg mb-2">Battle Royale</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Warzone</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg p-4 sm:p-6 text-center hover:shadow-md transition-shadow cursor-pointer">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-200 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-building-4-line text-purple-500 text-2xl"></i></div>
+              <h3 class="title-font font-bold text-base sm:text-lg mb-2">Build</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Minecraft</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ALL CREDITS -->
+    <div id="page-all-credits" class="page">
+      <section class="py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+          <h1 class="title-font text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-900 dark:text-white">Toutes les Vidéos</h1>
+          <div id="all-videos-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- DETAILS -->
+    <div id="page-details" class="page">
+      <div class="container mx-auto px-4 sm:px-6 py-12">
+        <div class="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-2/5 flex-shrink-0">
+              <img id="detail-thumbnail" class="h-48 md:h-full w-full object-cover" src="" alt="" />
+            </div>
+            <div class="p-6 md:p-8 flex flex-col justify-center">
+              <h1 id="detail-title" class="title-font text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white"></h1>
+              <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 my-4">
+                <span id="detail-date"></span><span class="mx-2">•</span><span id="detail-views"></span>
+              </div>
+              <p id="detail-description" class="text-gray-700 dark:text-gray-300 mb-6"></p>
+              <a id="detail-youtube-link" href="#" target="_blank" class="mt-auto neon-button bg-red-600 text-white px-6 py-3 rounded-button font-bold flex items-center justify-center space-x-2 hover:bg-red-700 transition-colors w-full">
+                <i class="ri-youtube-fill text-xl sm:text-2xl"></i><span>Voir sur YouTube</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="detail-credits-container" class="max-w-5xl mx-auto mt-2 p-4 md:p-8"></div>
+      </div>
+    </div>
+
+    <!-- MISSING CREDITS FORM -->
+    <div id="page-missing-credits" class="page">
+      <div class="container mx-auto px-4 sm:px-6 py-12">
+        <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 sm:p-8">
+          <div class="text-center">
+            <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Signaler un Crédit Manquant</h1>
+            <p class="text-gray-600 dark:text-gray-300 mb-8">Aide-nous à maintenir des informations de crédit précises en remplissant tous les champs.</p>
+          </div>
+
+          <form id="missing-credit-form" action="https://formspree.io/f/xnnvobnd" method="POST" class="space-y-6">
+            <div>
+              <label for="form-video-url" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">URL de la vidéo *</label>
+              <input type="url" id="form-video-url" name="video_url" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="https://youtube.com/watch?v=..." />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="form-first-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Prénom de la personne à créditer *</label>
+                <input type="text" id="form-first-name" name="first_name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Jean" />
+              </div>
+              <div>
+                <label for="form-last-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom de la personne à créditer *</label>
+                <input type="text" id="form-last-name" name="last_name" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Ex: Dupont" />
+              </div>
+            </div>
+
+            <div>
+              <label for="form-project-role" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Son rôle dans le projet *</label>
+              <textarea id="form-project-role" name="project_role" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" rows="4" placeholder="Décrivez sa contribution. Ex: Monteur vidéo, compositeur..."></textarea>
+            </div>
+
+            <div>
+              <label for="form-contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Votre Email de contact *</label>
+              <input type="email" id="form-contact-email" name="contact_email" required class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Pour que nous puissions vous répondre" />
+            </div>
+
+            <div>
+              <label for="form-credit-details" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Détails supplémentaires (Optionnel)</label>
+              <textarea id="form-credit-details" name="additional_details" class="w-full px-4 py-2 rounded-button border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" rows="3" placeholder="Toute autre information utile..."></textarea>
+            </div>
+
+            <div class="mt-6">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAABncIYMGywxVnwLT" data-theme="auto"></div>
+            </div>
+
+            <button type="submit" id="submit-missing-credit-btn" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium shadow-md hover:bg-primary/90 transition-all duration-200">Soumettre le rapport</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECRUTEMENT PAGE -->
+    <div id="page-recrutement" class="page">
+      <main class="min-h-screen py-8">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-12">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-custom-light">
+              <i class="ri-team-line text-3xl text-white"></i>
+            </div>
+            <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-darkText mb-4">Viens m’aider</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Envie de participer au développement du site ? Postule dans le formulaire sur cette page.
+              Pour toutes autres demandes de recrutement :
+              <a href="https://forms.gle/jNg6UrKYpcmQam5g6" class="text-primary hover:underline">c’est ici</a>.
             </p>
-            <div class="flex space-x-4">
-              <a
-                href="https://www.youtube.com/@azertixYT?sub_confirmation=1"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
-              >
-                <i class="ri-youtube-fill text-white"></i>
-              </a>
-              <a
-                href="https://x.com/YTAzerTix"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
-              >
-                <i class="ri-twitter-x-fill text-white"></i>
-              </a>
-            </div>
           </div>
-          <div>
-            <h3 class="font-display font-bold text-lg mb-6">Navigation</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="index"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Accueil</a
-                >
-              </li>
-              <li>
-                <a
-                  href="index"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Tout les Crédits</a
-                >
-              </li>
-              <li>
-                <a
-                  href="index"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Credits Manquants</a
-                >
-              </li>
-              <li>
-                <a
-                  href="recrutement"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Recrutement</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg mb-6">Catégories</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >FPS</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Battle Royale</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg mb-6">Contact</h3>
-            <ul class="space-y-3">
-              <li class="flex items-start">
-                <i class="ri-mail-line text-primary mt-1 mr-3"></i>
-                <span class="text-gray-400">yt.azertix.off@gmail.com</span>
-              </li>
-              <li class="flex items-start">
-                <i class="ri-discord-line text-primary mt-1 mr-3"></i>
-                <a
-                  href="https://discord.gg/YTbPJ6SRp6"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Discord</a
-                >
-              </li>
-              <li class="flex items-start">
-                <i class="ri-youtube-line text-primary mt-1 mr-3"></i>
-                <a
-                  href="https://www.youtube.com/@azertixYT?sub_confirmation=1""
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >YouTube</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="border-t border-gray-800 pt-8">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-500 text-sm mb-4 md:mb-0">
-              © 2025 Azertix. Tous droits réservés.
-            
-  <div>
-  <p class="text-white font-semibold mb-2"></p>
-  <a
-    href="Politique-de-Confidentialite"
-    class="text-gray-400 hover:text-white transition-colors"
-  >
-    Politique de Confidentialité
-  </a>
 
-  <p class="text-white font-semibold mt-4 mb-2"></p>
-  <a
-    href="Conditions-d-utilisation"
-    class="text-gray-400 hover:text-white transition-colors"
-  >
-    Conditions d'Utilisation
-  </a>
-</div>
-
+          <div class="email-info rounded-lg p-6 mb-8 text-center">
+            <div class="flex items-center justify-center space-x-3">
+              <i class="ri-mail-line text-2xl text-primary"></i>
+              <div>
+                <p class="text-gray-700 dark:text-gray-300 font-medium">
+                  N'oublie pas d'ajouter cet e‑mail à tes contacts pour éviter les spams (tu peux me contacter dessus).
+                </p>
+                <a href="mailto:yt.azertix.off@gmail.com" class="text-primary hover:text-secondary transition-colors font-semibold">yt.azertix.off@gmail.com</a>
               </div>
             </div>
           </div>
+
+          <div class="form-card rounded-2xl p-8 max-w-3xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center space-x-4">
+                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-primary text-primary active">1</div>
+                <div class="w-16 h-1 bg-gray-200 dark:bg-gray-600 rounded-full"><div class="progress-bar h-full rounded-full" style="width:0%"></div></div>
+                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-gray-300 dark:border-gray-600 text-gray-400">2</div>
+                <div class="w-16 h-1 bg-gray-200 dark:bg-gray-600 rounded-full"><div class="progress-bar h-full rounded-full" style="width:0%"></div></div>
+                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-gray-300 dark:border-gray-600 text-gray-400">3</div>
+              </div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">Étape <span id="current-step">1</span> sur 3</div>
+            </div>
+
+            <form id="recruitment-form" action="https://formspree.io/f/xnnvobnd" method="POST">
+              <!-- Étape 1 -->
+              <div id="step-1" class="step-content">
+                <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-6">Informations Personnelles</h2>
+                <div class="space-y-6">
+                  <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nom Complet *</label>
+                    <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm" />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Adresse Email *</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm" />
+                  </div>
+                  <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Âge *</label>
+                    <input type="number" id="age" name="age" min="13" max="100" required class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Étape 2 -->
+              <div id="step-2" class="step-content hidden">
+                <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-6">Vos Compétences</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">Sélectionne toutes les compétences qui te correspondent :</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                  <div class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent" data-skill="dev-web">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"><i class="ri-code-line text-xl text-white"></i></div>
+                    <h3 class="font-semibold mb-2">Développement Web</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">HTML, CSS, JavaScript, React</p>
+                  </div>
+                  <div class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent" data-skill="web-design">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"><i class="ri-palette-line text-xl text-white"></i></div>
+                    <h3 class="font-semibold mb-2">Web Design</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">UI/UX, Figma, Adobe Creative</p>
+                  </div>
+                  <div class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent" data-skill="marketing">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-3"><i class="ri-megaphone-line text-xl text-white"></i></div>
+                    <h3 class="font-semibold mb-2">Marketing</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Social, SEO, campagnes</p>
+                  </div>
+                  <div class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent" data-skill="optimization">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"><i class="ri-speed-up-line text-xl text-white"></i></div>
+                    <h3 class="font-semibold mb-2">Optimisation</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Performance, Analytics</p>
+                  </div>
+                  <div class="skill-card bg-white dark:bg-darkCard rounded-lg p-6 text-center border-2 border-transparent" data-skill="backend">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3"><i class="ri-article-line text-xl text-white"></i></div>
+                    <h3 class="font-semibold mb-2">Backend, Dashboard</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Mise en place, créations</p>
+                  </div>
+                </div>
+                <div>
+                  <label for="otherSkills" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Autres compétences</label>
+                  <input type="text" id="otherSkills" name="otherSkills" placeholder="Décris d'autres compétences…" class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm" />
+                </div>
+                <input type="hidden" id="selectedSkills" name="selectedSkills" />
+              </div>
+
+              <!-- Étape 3 -->
+              <div id="step-3" class="step-content hidden">
+                <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-darkText mb-6">Motivations et Liens</h2>
+                <div class="space-y-6">
+                  <div>
+                    <label for="motivation" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Pourquoi souhaites-tu rejoindre l'équipe Azertix ? *</label>
+                    <textarea id="motivation" name="motivation" required rows="5" placeholder="Partage tes motivations, idées et ce que tu peux apporter…" class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"></textarea>
+                  </div>
+                  <div>
+                    <label for="github" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Lien GitHub (optionnel)</label>
+                    <input type="url" id="github" name="github" placeholder="https://github.com/ton-profil" class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm" />
+                  </div>
+                  <div>
+                    <label for="portfolio" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Lien Portfolio (optionnel)</label>
+                    <input type="url" id="portfolio" name="portfolio" placeholder="https://ton-portfolio.com" class="w-full px-4 py-3 rounded-button border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary focus:border-transparent text-sm" />
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <input type="checkbox" id="gdpr" name="gdpr" required class="mt-1" />
+                    <label for="gdpr" class="text-sm text-gray-700 dark:text-gray-300">J'accepte qu'AzerTix reçoive mes données par e-mail pour me recontacter. *</label>
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <div class="cf-turnstile" data-sitekey="0x4AAAAAABncIYMGywxVnwLT" data-theme="auto"></div>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200 dark:border-gray-600">
+                <button type="button" id="prev-btn" class="px-6 py-3 rounded-button border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors !rounded-button whitespace-nowrap hidden">
+                  <i class="ri-arrow-left-line mr-2"></i>Précédent
+                </button>
+                <div class="flex space-x-4">
+                  <button type="button" id="next-btn" class="neon-button bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">
+                    Suivant<i class="ri-arrow-right-line ml-2"></i>
+                  </button>
+                  <button type="submit" id="submit-btn" class="neon-button bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-button font-medium hover:from-primary/90 hover:to-secondary/90 transition-colors !rounded-button whitespace-nowrap hidden">
+                    <i class="ri-send-plane-line mr-2"></i>Envoyer ma Candidature
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </main>
+
+  <!-- Footer (shared) -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8 mt-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center overflow-hidden">
+              <img src="profil.png" alt="Profil" class="w-full h-full object-cover" />
+            </div>
+            <span class="font-handwriting text-2xl">Azertix</span>
+          </div>
+          <p class="text-gray-400 mb-6">Retrouve toutes les musiques que j'utilise et les personnes qui participent à mes tournages.</p>
+          <div class="flex space-x-4">
+            <a href="https://www.youtube.com/@azertixYT?sub_confirmation=1" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-youtube-fill text-white"></i></a>
+            <a href="https://x.com/YTAzerTix" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i class="ri-twitter-x-fill text-white"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Navigation</h3>
+          <ul class="space-y-3">
+            <li><a href="#" data-page="home" class="page-link text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+            <li><a href="#" data-page="all-credits" class="page-link text-gray-400 hover:text-white transition-colors">Tous les Crédits</a></li>
+            <li><a href="#" data-page="missing-credits" class="page-link text-gray-400 hover:text-white transition-colors">Crédits Manquants</a></li>
+            <li><a href="#" data-page="recrutement" class="page-link text-gray-400 hover:text-white transition-colors">Recrutement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Catégories</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FPS</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Battle Royale</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-lg mb-6">Contact</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start"><i class="ri-mail-line text-primary mt-1 mr-3"></i><span class="text-gray-400">yt.azertix.off@gmail.com</span></li>
+            <li class="flex items-start"><i class="ri-discord-line text-primary mt-1 mr-3"></i><a href="https://discord.gg/YTbPJ6SRp6" class="text-gray-400 hover:text-white transition-colors">Discord</a></li>
+            <li class="flex items-start"><i class="ri-youtube-line text-primary mt-1 mr-3"></i><a href="https://www.youtube.com/@azertixYT?sub_confirmation=1" class="text-gray-400 hover:text-white transition-colors">YouTube</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
 
-    <script src="script.js" defer></script>
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Azertix. Tous droits réservés.</p>
+          <div class="flex items-center space-x-6">
+            <a href="Politique-de-Confidentialite" class="text-gray-400 hover:text-white transition-colors">Politique de Confidentialité</a>
+            <a href="Conditions-d-utilisation" class="text-gray-400 hover:text-white transition-colors">Conditions d'Utilisation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <!-- One combined script for navigation, theming, and recruitment logic -->
+  <script>
+    // --- THEME TOGGLE ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    function updateThemeIcon() {
+      const isDark = document.documentElement.classList.contains('dark');
+      themeIcon?.classList.toggle('ri-moon-line', !isDark);
+      themeIcon?.classList.toggle('ri-sun-line', isDark);
+    }
+    updateThemeIcon();
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeIcon();
+    });
+
+    // --- MOBILE MENU ---
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // --- SIMPLE SPA NAVIGATION ---
+    const pages = {
+      home: document.getElementById('page-home'),
+      'all-credits': document.getElementById('page-all-credits'),
+      'missing-credits': document.getElementById('page-missing-credits'),
+      recrutement: document.getElementById('page-recrutement'),
+      details: document.getElementById('page-details'),
+    };
+
+    function showPage(id) {
+      Object.values(pages).forEach(p => p && p.classList.remove('active'));
+      pages[id]?.classList.add('active');
+      // Close mobile menu on nav
+      mobileMenu?.classList.add('hidden');
+      // Persist last page (except details)
+      if (id !== 'details') localStorage.setItem('az-last-page', id);
+    }
+
+    document.querySelectorAll('.page-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('data-page');
+        if (id && pages[id]) showPage(id);
+      });
+    });
+
+    // Restore last visited page
+    const last = localStorage.getItem('az-last-page') || 'home';
+    if (pages[last]) showPage(last);
+
+    // --- PLACEHOLDER: populate videos on Home/All (hook to your data) ---
+    const homeGrid = document.getElementById('home-videos-container');
+    const allGrid = document.getElementById('all-videos-container');
+    const sample = Array.from({ length: 6 }).map((_, i) => ({
+      id: `vid-${i+1}`,
+      title: `Vidéo #${i+1} – Exemple`,
+      thumb: `https://picsum.photos/seed/az-${i}/600/340`,
+      date: '2025-09-01',
+      views: Math.floor(Math.random()*10000) + ' vues',
+      desc: 'Description de démonstration pour ta vidéo.',
+      url: 'https://youtube.com',
+    }));
+
+    function card(v) {
+      const el = document.createElement('div');
+      el.className = 'bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-lg transition';
+      el.innerHTML = `
+        <div class="relative group cursor-pointer" data-id="${v.id}">
+          <img src="${v.thumb}" alt="${v.title}" class="w-full h-44 object-cover" />
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white line-clamp-2">${v.title}</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">${v.date} • ${v.views}</p>
+        </div>`;
+      el.querySelector('.relative')?.addEventListener('click', () => openDetails(v));
+      return el;
+    }
+
+    function openDetails(v) {
+      document.getElementById('detail-thumbnail').src = v.thumb;
+      document.getElementById('detail-title').textContent = v.title;
+      document.getElementById('detail-date').textContent = v.date;
+      document.getElementById('detail-views').textContent = v.views;
+      document.getElementById('detail-description').textContent = v.desc;
+      document.getElementById('detail-youtube-link').href = v.url;
+      showPage('details');
+    }
+
+    sample.slice(0, 3).forEach(v => homeGrid?.appendChild(card(v)));
+    sample.forEach(v => allGrid?.appendChild(card(v)));
+
+    // --- RECRUITMENT MULTI-STEP FORM LOGIC ---
+    const steps = [
+      document.getElementById('step-1'),
+      document.getElementById('step-2'),
+      document.getElementById('step-3'),
+    ];
+    const currentStepSpan = document.getElementById('current-step');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    let step = 0;
+
+    function renderStep() {
+      steps.forEach((s, i) => s?.classList.toggle('hidden', i !== step));
+      steps.forEach((s, i) => s?.classList.toggle('block', i === step));
+      currentStepSpan && (currentStepSpan.textContent = String(step + 1));
+      prevBtn?.classList.toggle('hidden', step === 0);
+      nextBtn?.classList.toggle('hidden', step === steps.length - 1);
+      submitBtn?.classList.toggle('hidden', step !== steps.length - 1);
+      // progress indicators
+      const indicators = document.querySelectorAll('.step-indicator');
+      indicators.forEach((el, i) => {
+        el.classList.toggle('text-primary', i <= step);
+        el.classList.toggle('border-primary', i <= step);
+      });
+      const bars = document.querySelectorAll('.progress-bar');
+      bars.forEach((bar, i) => {
+        bar.style.width = (i < step ? '100%' : '0%');
+      });
+    }
+    renderStep();
+
+    nextBtn?.addEventListener('click', () => {
+      if (step < steps.length - 1) { step++; renderStep(); }
+    });
+    prevBtn?.addEventListener('click', () => {
+      if (step > 0) { step--; renderStep(); }
+    });
+
+    // Skill selection
+    const skillCards = document.querySelectorAll('.skill-card');
+    const selectedSkillsInput = document.getElementById('selectedSkills');
+    const selected = new Set();
+    skillCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const key = card.getAttribute('data-skill');
+        if (selected.has(key)) { selected.delete(key); card.classList.remove('active'); }
+        else { selected.add(key); card.classList.add('active'); }
+        selectedSkillsInput && (selectedSkillsInput.value = Array.from(selected).join(','));
+      });
+    });
+  </script>
 </body>
 </html>
